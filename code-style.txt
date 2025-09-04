@@ -1,0 +1,8 @@
+Code style:
+1 Please use function for commpoennts 
+2 () => {} arrow for handlers uitls not compoents 
+3 dont use FC  
+4 dont useForwardRef 
+5 name of handlers start from handler 
+6 use zustnad store for business logic 
+7 use context for global state 
