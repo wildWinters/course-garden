@@ -7,7 +7,11 @@ export function HeadingsWrapper() {
   return (
     <Background>
       <Headings LettesImages={<PictureSection />}>
-        <Button className="mt-[40px]" variant="purple">
+        <Button
+          style={{ maxWidth: "220px" }}
+          className="mt-[40px]"
+          variant="purple"
+        >
           Create online course
         </Button>
       </Headings>

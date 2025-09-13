@@ -21,8 +21,8 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         purple: `flex items-center justify-center h-[40px] 
-          bg-[rgba(241,120,182,1)] text-white w-[11vw] rounded-[8px]`,
-        gogle: `flex items-center gap-[8px] h-[40px] rounded-[8px] text-[rgba(45,30,99,1)] text-[20px] `,
+          bg-[rgba(241,120,182,1)] text-white rounded-[8px]`,
+        google: `relative inline-flex items-center justify-center  rounded-lg p-[2px]  bg-gradient-to-br from-[#C2CCE3] via-[#9D82FD] to-[#5E4E97] `,
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
