@@ -1,0 +1,18 @@
+import Image from "next/image";
+
+export function HeaderLogo() {
+  return (
+    <section className="flex items-center gap-[20px]">
+      <Image src="/Sign.jpg" alt="Sign" width={81} height={81} />
+      <div className="flex  flex-col">
+        <p className="mb-[2px] text-[clamp(16px,4vw,28px)]">
+          <span className="font-[500] text-[rgba(114,77,247,1)]">Course</span>
+          <span className="font-[500] text-[rgba(241,120,182,1)]">Garden</span>
+        </p>
+        <span className="relative top-[-8px] text-[rgba(134,134,154,1)] text-[16px]">
+          MINI-COURSES AI CREATOR
+        </span>
+      </div>
+    </section>
+  );
+}

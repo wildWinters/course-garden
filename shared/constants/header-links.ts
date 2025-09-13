@@ -1,5 +1,5 @@
 const HEADER_LINKS = [
-  "create",
+  "Create",
   "Share",
   "Download",
   "Courses",

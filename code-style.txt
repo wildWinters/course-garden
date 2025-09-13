@@ -5,7 +5,7 @@ Code style:
 4 dont useForwardRef 
 5 name of handlers start from handler 
 6 use zustnad store for business logic 
-7 use context for global state 
+7 use context for global state  or use another zustnad store for it 
 8 use Props for Comonents 
 9 for  types TName for interface IName 
 
@@ -16,3 +16,4 @@ Patterns
 1 single resposibility principle 
 2 open closed 
 3 interface is not lagre only 5 keys 
+small  children props 
