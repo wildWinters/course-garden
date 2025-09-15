@@ -1,3 +1,4 @@
+"use client";
 import {
   Dialog,
   DialogContent,
@@ -5,42 +6,57 @@ import {
 } from "@/shared/shad-cn/ui/dialog";
 import { ReactNode } from "react";
 import { cn } from "@/shared/lib/utils";
+import { borderGradient } from "@/shared/constants/border-gradient";
+import { useTranslation } from "react-i18next";
 
 export interface DialogWrapper {
   Trigger: ReactNode;
   children: ReactNode;
+  dialogContentClassName?: string;
 }
 
-export function DialogWrapper({ Trigger, children }: DialogWrapper) {
+export function DialogWrapper({
+  Trigger,
+  children,
+  dialogContentClassName,
+}: DialogWrapper) {
   return (
     <Dialog>
       <DialogTrigger asChild>{Trigger}</DialogTrigger>
-      <DialogContent className={cn("!flex sm:!w-[100vw]   gap-2 rounded-2xl")}>
+      <DialogContent
+        className={cn(
+          "flex w-[92vw] md:w-[80vw] !p-[0px] gap-2 rounded-2xl",
+          dialogContentClassName
+        )}
+        style={borderGradient}
+      >
+        <DialogTitle className="hidden">{null}</DialogTitle>
         {children}
       </DialogContent>
     </Dialog>
   );
 }
 
+
 import { LabelInput } from "@/shared/ui/label-input";
+interface ISignInContentOfDialog {
+  labels?: typeof Labels;
+  inOrUp?: "in" | "up";
+}
 
 export function SignInContentOfDialog({
   labels = Labels,
-}: {
-  labels: typeof Labels;
-}) {
+  inOrUp = "in",
+}: ISignInContentOfDialog) {
   return (
     <section
-      className="flex-1 flex flex-col w-full bg-white border-2 border-[rgba(45,30,99,1)] rounded-[8px] px-[24px] py-[54px]"
+      className="flex-1 flex flex-col w-1/2 rounded-[8px] px-[24px] py-[54px]"
       style={{
         padding: "54px 24px",
-        border: "2px solid",
-        borderImageSlice: 1,
-        borderImageSource:
-          "linear-gradient(246.14deg, #C2CCE3 19.44%, #9D82FD 49.71%, #5E4E97 75.58%)",
+        ...borderGradient,
       }}
     >
-      <GrettingsRegistration />
+      <GrettingsRegistration inOrUp={inOrUp} />
       <div className="flex flex-col p-[10px] rounded-[14px]">
         <div className="flex flex-col mt-[40px]" style={{ gap: "16px" }}>
           {labels.map((label, index) => (
@@ -51,30 +67,35 @@ export function SignInContentOfDialog({
               placeholder={label.label}
             >
               {index === 1 && (
-                <EyeOff
-                  style={{ right: "80px" }}
-                  className={`absolute cursor-pointer`}
-                />
+                <EyeOff className={`absolute right-[10px] cursor-pointer`} />
               )}
             </LabelInput>
           ))}
-          <AgreeWithTermsOfUseAndPrivacyPolicy />
+          <AgreeWithTermsOfUseAndPrivacyPolicy inOrUp={inOrUp} />
         </div>
       </div>
-      <ButtonsBLock />
-      <DescriptionBlock />
+      <ButtonsBLock inOrUp={inOrUp} />
+      <DescriptionBlock inOrUp={inOrUp} />
     </section>
   );
 }
 
-export function GrettingsRegistration() {
+export interface IGrettingsRegistrationMode {
+  inOrUp?: "in" | "up";
+}
+
+export function GrettingsRegistration({
+  inOrUp = "in",
+}: IGrettingsRegistrationMode) {
+  const { t } = useTranslation();
+
   return (
     <>
       <span className="font-[500] mb-[8px] text-[30px] text-[rgba(45,30,99,1)]">
-        Hello👋
+        {t("auth.login.title")}
       </span>
       <span className="text-[16px] font-[500] text-[rgba(45,30,99,1)]">
-        Sign in to access your account
+        {inOrUp === "in" ? t("auth.login.subtitle") : t("app.create")}
       </span>
     </>
   );
@@ -83,43 +104,82 @@ export function GrettingsRegistration() {
 import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
 import { EyeOff } from "lucide-react";
 import Link from "next/link";
-export function AgreeWithTermsOfUseAndPrivacyPolicy() {
+interface IAgreeWithTermsOfUseAndPrivacyPolicy {
+  inOrUp?: "in" | "up";
+}
+export function AgreeWithTermsOfUseAndPrivacyPolicy({
+  inOrUp = "in",
+}: IAgreeWithTermsOfUseAndPrivacyPolicy) {
+  const { t } = useTranslation();
+  const description =
+    inOrUp === "in" ? t("auth.login.options.0.label") : t("app.agree");
   return (
     <div className="w-full flex items-center justify-between mt-[16px]">
       <div style={{ gap: "15px" }} className="flex items-center gap-[15px]">
         <Checkbox
           className="rounded-[10px] w-[12px] h-[12px]"
-          style={{
-            border: "1px solid",
-            borderImageSlice: 1,
-            borderImageSource:
-              "linear-gradient(246.14deg, #C2CCE3 19.44%, #9D82FD 49.71%, #5E4E97 75.58%)",
-          }}
+          style={borderGradient}
         />
 
-        <span className="text-[rgba(45,30,99,1)] font-[500]">
-          Keep me signed in
-        </span>
+        <p className="text-[rgba(45,30,99,1)] font-[500]">
+          {description}
+          <span
+            className={cn(
+              "text-[rgba(114,77,247,1)]",
+              inOrUp === "in" && "hidden"
+            )}
+          >
+            {t("app.terms")}
+          </span>
+
+          <span className={cn(inOrUp === "in" && "hidden")}>
+            {t("app.and")}
+          </span>
+
+          <span
+            className={cn(
+              "text-[rgba(114,77,247,1)]",
+              inOrUp === "in" && "hidden"
+            )}
+          >
+            {t("app.conditions")}
+          </span>
+        </p>
       </div>
       <Link
         href="#"
-        className="font-[500] text-[rgba(114,77,247,1)] text-[14px]"
+        className={cn(
+          "font-[500] text-[rgba(114,77,247,1)] text-[14px]",
+          inOrUp === "up" && "hidden"
+        )}
       >
-        Forgot Password?
+        {t("auth.login.options.1.label")}
       </Link>
     </div>
   );
 }
 
-import { borderGradient } from "@/shared/constants/border-gradient";
+
 import { Button } from "@/shared/shad-cn/ui/button";
 import Image from "next/image";
 import { Labels } from "@/shared/constants/labels";
-export function ButtonsBLock() {
+import { DialogTitle } from "@radix-ui/react-dialog";
+
+interface IButtonsBLock {
+  inOrUp?: "in" | "up";
+}
+
+export function ButtonsBLock({ inOrUp = "in" }: IButtonsBLock) {
+  const { t } = useTranslation();
+  const textButton =
+    inOrUp === "in"
+      ? t("auth.login.buttons.0.label")
+      : t("auth.login.footer.link.label");
+
   return (
-    <div className="flex gap-[20px] mt-[40px]">
+    <div className="flex gap-[20px] mt-[40px] flex-col md:flex-row">
       <Button className="flex-1" variant="purple">
-        Sign In
+        {textButton}
       </Button>
       <Button
         variant="google"
@@ -130,20 +190,31 @@ export function ButtonsBLock() {
         }}
       >
         <Image src="/google.png" alt="google" width={20} height={20} />
-        Sign in with Google
+        {t("auth.login.buttons.1.label")}
       </Button>
     </div>
   );
 }
 
-export function DescriptionBlock() {
+
+
+interface IDescriptionBlock {
+  inOrUp?: "in" | "up";
+}
+export function DescriptionBlock({ inOrUp = "in" }: IDescriptionBlock) {
+  const { t } = useTranslation();
+
   return (
     <section className="flex items-center gap-[15px] text-[14px] mt-[40px]">
       <span className="font-[500] text-[rgba(114,77,247,1)]">
-        Don`t have an account?
+        {inOrUp === "in"
+          ? t("auth.login.footer.notHaveAccount")
+          : t("auth.login.footer.haveAccount")}
       </span>
       <Link href="#" className="font-[500] text-[14px] text-[rgba(45,30,99,1)]">
-        Sign Up
+        {inOrUp === "up"
+          ? t("auth.login.footer.link.label")
+          : t("auth.login.footer.link.label2")}
       </Link>
     </section>
   );

@@ -6,6 +6,9 @@ import { HeaderLogo } from "@/shared/widgets/header/components/logo";
 import { HeaderLinks } from "@/shared/widgets/header/components/links";
 import HEADER_LINKS from "@/shared/constants/header-links";
 import { Cabin } from "next/font/google";
+import { MobileHeader } from "@/shared/widgets/header/components/links";
+import { Providers } from "./providers";
+import "@/shared/i18n/i18n";
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -35,14 +38,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/Sign.jpg"  type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${cabin.variable}`}
       >
-        <HeaderWrapper>
-          <HeaderLogo />
-          <HeaderLinks links={HEADER_LINKS} />
-        </HeaderWrapper>
-        {children}
+        <Providers>
+          <HeaderWrapper>
+            <HeaderLogo />
+            <HeaderLinks />
+          </HeaderWrapper>
+          <MobileHeader />
+          {children}
+        </Providers>
       </body>
     </html>
   );

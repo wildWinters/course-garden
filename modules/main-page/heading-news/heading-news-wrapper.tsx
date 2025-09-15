@@ -1,9 +1,12 @@
+"use client";
 import { Background } from "@/shared/ui/background";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { Headings } from "./components/headings";
 import { PictureSection } from "./components/picture-section";
+import { useTranslation } from "react-i18next";
 
 export function HeadingsWrapper() {
+  const { t } = useTranslation();
   return (
     <Background>
       <Headings LettesImages={<PictureSection />}>
@@ -12,7 +15,7 @@ export function HeadingsWrapper() {
           className="mt-[40px]"
           variant="purple"
         >
-          Create online course
+          {t("app.features.createCourseAction")}
         </Button>
       </Headings>
     </Background>
