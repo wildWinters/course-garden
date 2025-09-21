@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { HeaderWrapper } from "@/shared/widgets/header/header-wrapper";
+import { DesktopHeader } from "@/shared/widgets/header/header-wrapper";
 import { HeaderLogo } from "@/shared/widgets/header/components/logo";
-import { HeaderLinks } from "@/shared/widgets/header/components/links";
-import HEADER_LINKS from "@/shared/constants/header-links";
+import { HeaderLinks } from "@/shared/widgets/header/components/header-links";
 import { Cabin } from "next/font/google";
-import { MobileHeader } from "@/shared/widgets/header/components/links";
+import { MobileHeader } from "@/shared/widgets/header/components/mobile-header";
 import { Providers } from "./providers";
 import "@/shared/i18n/i18n";
 
@@ -39,16 +38,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/Sign.jpg"  type="image/png" />
+        <link rel="icon" href="/img/Sign.jpg" type="image/png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${cabin.variable}`}
       >
         <Providers>
-          <HeaderWrapper>
+          <DesktopHeader>
             <HeaderLogo />
             <HeaderLinks />
-          </HeaderWrapper>
+          </DesktopHeader>
           <MobileHeader />
           {children}
         </Providers>
