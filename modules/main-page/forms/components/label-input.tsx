@@ -30,6 +30,9 @@ export function LabelInput({
       </label>
       <div className="relative flex items-center space-between pl-[10px]">
         <Input
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck={false}
           id={id}
           placeholder={placeholder}
           value={value}

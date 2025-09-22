@@ -1,12 +1,13 @@
 import ky from "ky";
 
-const kyInstance = ky.create({
-  prefixUrl: process.env.NEXT_PUBLIC_API_URL,
+export const kyInstance = ky.create({
+  prefixUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/",
+  credentials: "include",
   retry: {
     limit: 3,
   },
   hooks: {
-    beforeRequest: [() => console.log("before url")],
-    afterResponse: [() => console.log("after response")],
+    beforeRequest: [],
+    afterResponse: [],
   },
 });

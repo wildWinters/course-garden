@@ -5,6 +5,7 @@ import { Headings } from "./components/headings";
 import { PictureSection } from "./components/picture-section";
 import { useTranslation } from "react-i18next";
 
+
 export function HeadingsWrapper() {
   const { t } = useTranslation();
   return (

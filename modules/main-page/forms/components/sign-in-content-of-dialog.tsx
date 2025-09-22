@@ -2,23 +2,31 @@
 import { borderGradient } from "@/shared/constants/border-gradient";
 import { Labels } from "@/shared/mock/labels";
 import { GrettingsRegistration } from "./grettings-registration";
-import { AgreeWithTermsOfUseAndPrivacyPolicy } from "@/bugs/bugs";
+import { AgreeWithTermsOfUseAndPrivacyPolicy } from "./agree-with-terms-of-use-and-privacy-policy";
 import { ButtonsBLock } from "./buttons-block";
 import { DescriptionBlock } from "./description-block";
 import { EyeOff } from "lucide-react";
 import { LabelInput } from "./label-input";
 import { FormData } from "../model/form-schema";
 import { useForm, Controller } from "react-hook-form";
+import { login } from "../handlers/login";
+import { register } from "../handlers/handle-register";
+import { useRouter } from "next/navigation";
 
 export interface ISignInContentOfDialog {
   labels?: typeof Labels;
   inOrUp?: "in" | "up";
+  redirectPath?: string;
+  onSuccess?: () => void;
 }
 
 export function SignInContentOfDialog({
   labels = Labels,
   inOrUp = "in",
+  redirectPath = "/",
+  onSuccess,
 }: ISignInContentOfDialog) {
+  const router = useRouter();
   const {
     handleSubmit,
     control,
@@ -27,8 +35,25 @@ export function SignInContentOfDialog({
     defaultValues: { email: "", password: "" },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (data: FormData) => {
+    try {
+      if (inOrUp === "in") {
+        await login(data.email, data.password);
+        console.log("Logged in.");
+      } else {
+        const res = await register(data.email, data.password);
+        console.log("Registered:", res);
+      }
+      router.push(redirectPath);
+      router.refresh();
+      onSuccess?.();
+    } catch (e) {
+      if (e instanceof Error) {
+        console.error(e.message);
+      } else {
+        console.error(e);
+      }
+    }
   };
 
   return (
