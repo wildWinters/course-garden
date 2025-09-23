@@ -4,7 +4,7 @@ import HEADER_LINKS from "@/shared/widgets/header/const/header-links";
 import { Last_LIST_ELEMENT_BUTTON } from "@/shared/widgets/header/const/tw-list-button";
 import { Labels } from "@/shared/mock/labels";
 import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
-import { SignInContentOfDialog } from "@/modules/main-page/forms/components/sign-in-content-of-dialog";
+import { SignInContentOfDialog } from "@/modules/main-page/modal-form/components/sign-in-content-of-dialog";
 import { Button } from "@/shared/shad-cn/ui/button";
 import Image from "next/image";
 

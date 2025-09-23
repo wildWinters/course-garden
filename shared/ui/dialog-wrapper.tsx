@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, Dispatch, SetStateAction } from "react";
 import { cn } from "@/shared/lib/utils";
 import { borderGradient } from "@/shared/constants/border-gradient";
 import {
@@ -6,21 +6,28 @@ import {
   DialogTrigger,
   DialogContent,
   DialogTitle,
+  DialogClose,
 } from "@/shared/shad-cn/ui/dialog";
 
-export interface DialogWrapper {
-  Trigger: ReactNode;
+export interface DialogWrapperProps {
+  Trigger: ReactNode | null;
   children: ReactNode;
   dialogContentClassName?: string;
+  isOpen?: boolean;
+  setIsOpen?:
+    | Dispatch<SetStateAction<boolean>>
+    | ((isModalOpen: boolean) => void);
 }
 
 export function DialogWrapper({
   Trigger,
   children,
   dialogContentClassName,
-}: DialogWrapper) {
+  isOpen,
+  setIsOpen,
+}: DialogWrapperProps) {
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>{Trigger}</DialogTrigger>
       <DialogContent
         className={cn(
@@ -30,6 +37,12 @@ export function DialogWrapper({
         style={borderGradient}
       >
         <DialogTitle className="hidden">{null}</DialogTitle>
+        <DialogClose
+          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-gray-100 focus:outline-none"
+          aria-label="Close"
+        >
+          ✕
+        </DialogClose>
         {children}
       </DialogContent>
     </Dialog>

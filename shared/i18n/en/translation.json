@@ -67,6 +67,12 @@
           "href": "/signup"
         }
       }
+    },
+
+    "modal-forgot-password": {
+      "description": "Enter the email  adress you used to create the account, and we will  email you instructions to reset your password.",
+      "password": "Forgot Password?",
+      "email": "Send email"
     }
   }
 }

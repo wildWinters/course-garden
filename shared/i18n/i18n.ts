@@ -2,24 +2,22 @@
 
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import HttpBackend from "i18next-http-backend";
 
+
+import en from "./en/translation.json" assert { type: "json" };
+import ukr from "./ukr/translation.json" assert { type: "json" };
 
 try {
   i18n
-    .use(HttpBackend)
     .use(initReactI18next)
     .init({
-      lng: "en", 
+      lng: "en",
       fallbackLng: "en",
       supportedLngs: ["en", "ukr"],
       debug: process.env.NODE_ENV === "development",
-      backend: {
-        loadPath: "/locales/{{lng}}/translation.json",
-        crossDomain: true,
-        requestOptions: {
-          cache: 'no-store',
-        },
+      resources: {
+        en: { translation: en as unknown as Record<string, unknown> },
+        ukr: { translation: ukr as unknown as Record<string, unknown> },
       },
       ns: ["translation"],
       defaultNS: "translation",

@@ -1,38 +1,17 @@
-import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import { cors } from "hono/cors";
-import "dotenv/config";
-import { auth } from "./modules/main-page/auth/auth.js";
-import type { AppBindings } from "./shared/middleware/auth.js";
+import { serve } from "@hono/node-server";
+import { PrismaClient } from "./generated/prisma/index.js";
 
-const app = new Hono<AppBindings>();
+const app = new Hono();
+const prisma = new PrismaClient();
 
-// CORS for frontend
-const origin = process.env.CORS_ORIGIN || process.env.NEXT_PUBLIC_APP_ORIGIN || "http://localhost:3000";
-app.use("*", cors({
-  origin,
-  allowHeaders: ["Content-Type", "Authorization"],
-  allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  exposeHeaders: ["Content-Length"],
-  maxAge: 600,
-  credentials: true,
-}));
+app.get("/hello", (c) => c.json("hello world"));
 
-// Global error handler
-app.onError((err, c) => {
-  console.error("Unhandled error:", err);
-  return c.json({ error: "Внутрішня помилка сервера" }, 500);
+serve({
+  fetch: app.fetch,
+  port: Number(process.env.PORT) || 4000,
 });
 
-// Routes
-app.route("/auth", auth);
+console.log("server is run on port http://localhost:4000");
 
-serve(
-  {
-    fetch: app.fetch,
-    port: 4000,
-  },
-  (info) => {
-    console.log(`Server is running on http://localhost:${info.port}`);
-  }
-);
+

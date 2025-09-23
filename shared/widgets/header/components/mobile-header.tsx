@@ -4,7 +4,7 @@ import Image from "next/image";
 import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { Menu } from "lucide-react";
-import { SignInContentOfDialog } from "@/modules/main-page/forms/components/sign-in-content-of-dialog";
+import { SignInContentOfDialog } from "@/modules/main-page/modal-form/components/sign-in-content-of-dialog";
 import { Labels } from "@/shared/mock/labels";
 
 export function MobileHeader() {
@@ -17,7 +17,7 @@ export function MobileHeader() {
       <Image src="/img/Sign.jpg" alt="Sign" width={81} height={81} />
 
       <DialogWrapper
-        Trigger={ 
+        Trigger={
           <Button className="w-[29vw] h-[40px]" variant="purple">
             {t("auth.login.footer.link.label")}
           </Button>
