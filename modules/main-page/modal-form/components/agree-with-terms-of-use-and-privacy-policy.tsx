@@ -6,14 +6,13 @@ import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
 import Link from "next/link";
 import { ForgotPasswordWrapper } from "../../modal-forgot-password/forgot-password-wrapper";
 import { Dispatch, SetStateAction } from "react";
+import { useUiStore } from "../store/ui/ui-store";
 
 export interface IAgreeWithTermsOfUseAndPrivacyPolicy {
   inOrUp?: "in" | "up";
   isOpen?: boolean;
   setIsOpen?: Dispatch<SetStateAction<boolean>>;
 }
-
-
 
 export function AgreeWithTermsOfUseAndPrivacyPolicy({
   inOrUp = "in",
@@ -23,6 +22,7 @@ export function AgreeWithTermsOfUseAndPrivacyPolicy({
   const { t } = useTranslation();
   const description =
     inOrUp === "in" ? t("auth.login.options.0.label") : t("app.agree");
+  
   return (
     <div className="w-full flex items-center justify-between mt-[16px]">
       <div style={{ gap: "15px" }} className="flex items-center gap-[15px]">

@@ -11,9 +11,8 @@ import { useUiStore } from "../../modal-form/store/ui/ui-store";
 export function LoginDescription() {
   const { t } = useTranslation();
   const linkText = t("Open Dialog");
-  const isModalOpen = useUiStore((state) => state.isModalOpen);
-  const setIsModalOpen = useUiStore((state) => state.setIsModalOpen);
-
+  const modalFormsRef = useUiStore((state) => state.modalFormsRef);
+  
   return (
     <section className="flex gap-2 items-center justify-center text-center">
       <span className="text-[14px] font-[400] text-gray-500">
@@ -21,13 +20,9 @@ export function LoginDescription() {
       </span>
 
       <DialogWrapper
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
+        ref={modalFormsRef}
         Trigger={
-          <Button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-transparent text-[14px] font-[600] text-[rgba(35,111,246,1)] hover:bg-transparent"
-          >
+          <Button className="bg-transparent text-[14px] font-[600] text-[rgba(35,111,246,1)] hover:bg-transparent">
             Login
           </Button>
         }

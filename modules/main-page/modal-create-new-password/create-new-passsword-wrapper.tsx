@@ -9,8 +9,9 @@ import { useEffect } from "react";
 
 export function CreateNewPasswordWrapper() {
   const [isOpen, setisOpen] = useState<boolean>(false);
+
   useEffect(() => {
-    setTimeout(() => {
+    setTimeout(() => { 
       setisOpen(true);
     }, 3000);
   }, []);

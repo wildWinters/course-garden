@@ -12,7 +12,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useState } from "react";
 import { cn } from "@/shared/lib/utils";
 import { useUiStore } from "../store/ui/ui-store";
-import { Eye } from "lucide-react";   
+import { Eye } from "lucide-react";
 
 export interface ISignInContentOfDialog {
   labels?: typeof Labels;

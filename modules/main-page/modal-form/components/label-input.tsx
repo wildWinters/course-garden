@@ -1,6 +1,7 @@
 "use client";
 import { Input } from "@/shared/shad-cn/ui/input";
 import { ReactNode } from "react";
+import { ChangeEvent } from "react";
 
 export interface LabelInputProps {
   id: string;
@@ -13,7 +14,7 @@ export interface LabelInputProps {
   isClickedOnEye?: boolean;
   onBlur?: () => void;
   setIsClickedOnEye?: (value: boolean) => void;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export function LabelInput({
