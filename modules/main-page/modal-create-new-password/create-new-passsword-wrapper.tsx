@@ -6,12 +6,13 @@ import { Eye } from "lucide-react";
 import { CreateNewPasswordTitle } from "./components/create-new-password-title";
 import { useState } from "react";
 import { useEffect } from "react";
+import { CustomModalWrapper } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 
 export function CreateNewPasswordWrapper() {
   const [isOpen, setisOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    setTimeout(() => { 
+    setTimeout(() => {
       setisOpen(true);
     }, 3000);
   }, []);

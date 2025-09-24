@@ -12,7 +12,7 @@ export function LoginDescription() {
   const { t } = useTranslation();
   const linkText = t("Open Dialog");
   const modalFormsRef = useUiStore((state) => state.modalFormsRef);
-  
+
   return (
     <section className="flex gap-2 items-center justify-center text-center">
       <span className="text-[14px] font-[400] text-gray-500">

@@ -49,6 +49,7 @@ export default function RootLayout({
             <HeaderLinks />
           </DesktopHeader>
           <MobileHeader />
+          <div id="modal-root"></div>
           {children}
         </Providers>
       </body>
