@@ -1,48 +1,51 @@
 "use client";
-import { createPortal } from "react-dom";
-import { ReactNode, useEffect, useState } from "react";
-import { RefObject } from "react";
 
-export interface IcustomModal {
+import { createPortal } from "react-dom";
+import { ReactNode, useEffect } from "react";
+import { XIcon } from "lucide-react";
+import { Button } from "@/shared/shad-cn/ui/button";
+
+interface ICustomModal {
   id: string;
   children: ReactNode;
   zIndex?: number;
-  ref?: RefObject<HTMLDivElement>;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export function CustomModalWrapper({
+export function CustomModal({
   id,
   children,
-  zIndex,
-  ref,
-}: IcustomModal) {
-  const [container, setContainer] = useState<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
+  zIndex = 50,
+  isOpen,
+  onClose,
+}: ICustomModal) {
   useEffect(() => {
-    const el = document.getElementById(id) as HTMLElement | null;
-    setContainer(el);
-    requestAnimationFrame(() => setIsVisible(true));
-  }, [id]);
-    
-  if (!container) return null;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
+
+  if (!isOpen) return null;
 
   return createPortal(
     <div
-      ref={ref}
-      className={`fixed inset-0 flex items-center justify-center w-[100vw] h-[100vh] bg-black/50 transition-opacity duration-300 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-      style={{ zIndex: zIndex ?? 9999 }}
+      className="fixed inset-0 bg-black/50 flex items-center justify-center"
+      style={{ zIndex }}
+      onClick={onClose}
     >
       <div
-        className={`bg-white rounded-xl shadow-lg p-6 transition-all duration-300 transform ${
-          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}
+        className="bg-white p-4 rounded-lg relative"
+        onClick={(e) => e.stopPropagation()}
       >
+        <Button className="absolute top-2 right-2" onClick={onClose}>
+          <XIcon />
+        </Button>
         {children}
       </div>
     </div>,
-    container
+    document.body
   );
 }
