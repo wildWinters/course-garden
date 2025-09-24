@@ -3,10 +3,9 @@ import { cn } from "@/shared/lib/utils";
 import HEADER_LINKS from "@/shared/widgets/header/const/header-links";
 import { Last_LIST_ELEMENT_BUTTON } from "@/shared/widgets/header/const/tw-list-button";
 import { Labels } from "@/shared/mock/labels";
-import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
-import { SignInContentOfDialog } from "@/modules/main-page/modal-form/components/sign-in-content-of-dialog";
-import { Button } from "@/shared/shad-cn/ui/button";
+import { ModalFormWrapper } from "@/modules/main-page/modal-form/forms-wrapper";
 import Image from "next/image";
+import { useModalStore } from "@/shared/store/use-modal-store";
 
 export interface LinksListProps {
   links?: string[];
@@ -18,6 +17,7 @@ export function LinksList({
   ulClassName,
 }: LinksListProps) {
   const safeLinks = Array.isArray(links) ? links : [];
+  const { openCustomModalOfSignIn } = useModalStore();
 
   return (
     <ul className={cn("flex space-x-[40px] items-center", ulClassName)}>
@@ -28,26 +28,10 @@ export function LinksList({
           return (
             <li
               key={link}
+              onClick={openCustomModalOfSignIn}
               className={cn("list-none", Last_LIST_ELEMENT_BUTTON)}
             >
-              <DialogWrapper
-                Trigger={
-                  <Button className="w-full" variant="purple">
-                    {linkText}
-                  </Button>
-                }
-              >
-                <div className="flex w-full">
-                  <SignInContentOfDialog labels={Labels} />
-                  <Image
-                    src="/img/robo-handlers.png"
-                    alt="robo-handlers"
-                    width={400}
-                    height={400}
-                    className="min-h-[100%] w-1/2 h-full hidden md:block"
-                  />
-                </div>
-              </DialogWrapper>
+              <ModalFormWrapper />
             </li>
           );
         }

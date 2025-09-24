@@ -25,7 +25,7 @@ export function LoginDescription() {
           <Button className="bg-transparent text-[14px] font-[600] text-[rgba(35,111,246,1)] hover:bg-transparent">
             Login
           </Button>
-        }
+        } 
       >
         <div className="flex w-full">
           <SignInContentOfDialog labels={Labels} />
