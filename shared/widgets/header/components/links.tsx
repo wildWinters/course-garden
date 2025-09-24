@@ -31,6 +31,7 @@ export function LinksList({
               onClick={openCustomModalOfSignIn}
               className={cn("list-none", Last_LIST_ELEMENT_BUTTON)}
             >
+              sign in 
               <ModalFormWrapper />
             </li>
           );

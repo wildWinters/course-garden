@@ -1,7 +1,7 @@
 "use client";
 
 import { createPortal } from "react-dom";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { XIcon } from "lucide-react";
 import { Button } from "@/shared/shad-cn/ui/button";
 
@@ -11,6 +11,7 @@ interface ICustomModal {
   zIndex?: number;
   isOpen: boolean;
   onClose: () => void;
+  customModalClassName?: string;
 }
 
 export function CustomModal({
@@ -20,6 +21,8 @@ export function CustomModal({
   isOpen,
   onClose,
 }: ICustomModal) {
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -28,16 +31,28 @@ export function CustomModal({
     return () => document.removeEventListener("keydown", handleEsc);
   }, [onClose]);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    if (isOpen) setShow(true);
+    else {
+      const timeout = setTimeout(() => setShow(false), 500); // довший тайм-аут для плавного закриття
+      return () => clearTimeout(timeout);
+    }
+  }, [isOpen]);
+
+  if (!show) return null;
 
   return createPortal(
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center"
+      className={`fixed inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-500 ease-out ${
+        isOpen ? "opacity-100" : "opacity-0"
+      }`}
       style={{ zIndex }}
       onClick={onClose}
     >
       <div
-        className="bg-white p-4 rounded-lg relative"
+        className={`bg-white p-4 rounded-lg relative transform transition-all duration-500 ease-out ${
+          isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         <Button className="absolute top-2 right-2" onClick={onClose}>
