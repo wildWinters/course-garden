@@ -4,14 +4,15 @@ import { createPortal } from "react-dom";
 import { ReactNode, useEffect, useState } from "react";
 import { XIcon } from "lucide-react";
 import { Button } from "@/shared/shad-cn/ui/button";
-
-interface ICustomModal {
+import { cn } from "@/shared/lib/utils";
+ 
+export interface ICustomModal {
   id: string;
   children: ReactNode;
   zIndex?: number;
   isOpen: boolean;
-  onClose: () => void;
   customModalClassName?: string;
+  onClose: () => void;
 }
 
 export function CustomModal({
@@ -20,6 +21,7 @@ export function CustomModal({
   zIndex = 50,
   isOpen,
   onClose,
+  customModalClassName,
 }: ICustomModal) {
   const [show, setShow] = useState(false);
 
@@ -50,9 +52,12 @@ export function CustomModal({
       onClick={onClose}
     >
       <div
-        className={`bg-white p-4 rounded-lg relative transform transition-all duration-500 ease-out ${
-          isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}
+        className={cn(
+          `bg-white p-4 rounded-lg relative transform transition-all duration-500 ease-out ${
+            isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`,
+          customModalClassName
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         <Button className="absolute top-2 right-2" onClick={onClose}>

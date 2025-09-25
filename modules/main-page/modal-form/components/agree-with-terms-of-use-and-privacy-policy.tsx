@@ -3,10 +3,10 @@ import { cn } from "@/shared/lib/utils";
 import { borderGradient } from "@/shared/constants/border-gradient";
 import { useTranslation } from "react-i18next";
 import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
-import Link from "next/link";
-import { ForgotPasswordWrapper } from "../../modal-forgot-password/forgot-password-wrapper";
 import { Dispatch, SetStateAction } from "react";
-import { useUiStore } from "../store/ui/ui-store";
+import { useModalStore } from "@/shared/store/use-modal-store";
+import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
+import { CustomModalOfForgotPassword } from "@/shared/widgets/custom-modal/components/custom-modal-of-forgot-passsword-content";
 
 export interface IAgreeWithTermsOfUseAndPrivacyPolicy {
   inOrUp?: "in" | "up";
@@ -19,10 +19,21 @@ export function AgreeWithTermsOfUseAndPrivacyPolicy({
   isOpen,
   setIsOpen,
 }: IAgreeWithTermsOfUseAndPrivacyPolicy) {
+  const isCustomModalOfForgotPasswordOpen = useModalStore(
+    (state) => state.isCustomModalOfForgotPasswordOpen
+  );
+  const openCustomModalOfForgotPassword = useModalStore(
+    (state) => state.openCustomModalOfForgotPassword
+  );
+
+  const closeCustomModalOfSignIn = useModalStore(
+    (state) => state.closeCustomModalOfSignIn
+  );
+
   const { t } = useTranslation();
   const description =
     inOrUp === "in" ? t("auth.login.options.0.label") : t("app.agree");
-  
+
   return (
     <div className="w-full flex items-center justify-between mt-[16px]">
       <div style={{ gap: "15px" }} className="flex items-center gap-[15px]">
@@ -56,20 +67,19 @@ export function AgreeWithTermsOfUseAndPrivacyPolicy({
           </span>
         </p>
       </div>
-      <ForgotPasswordWrapper
-        Trigger={
-          <Link
-            onClick={() => setIsOpen?.(false)}
-            href="#"
-            className={cn(
-              "font-[500] text-[rgba(114,77,247,1)] text-[14px]",
-              inOrUp === "up" && "hidden"
-            )}
-          >
-            {t("auth.login.options.1.label")}
-          </Link>
-        }
-      ></ForgotPasswordWrapper>
+
+      <span
+        onClick={() => {
+          closeCustomModalOfSignIn();
+          openCustomModalOfForgotPassword();
+        }}
+        className={cn(
+          "font-[500] text-[rgba(114,77,247,1)] text-[14px]",
+          inOrUp === "up" && "hidden"
+        )}
+      >
+        {t("auth.login.options.1.label")}
+      </span>
     </div>
   );
 }

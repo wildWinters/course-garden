@@ -25,11 +25,11 @@ export function CustomModalOfForgotPassword() {
           />
         </LabelInput>
         <ModalEmailSendWrapper
-          Trigger={
-            <Button variant={"purple"}>
-              {t("auth.modal-forgot-password.email")}
-            </Button>
-          }
+        // Trigger={
+        //   <Button variant={"purple"}>
+        //     {t("auth.modal-forgot-password.email")}
+        //   </Button>
+        // }
         />
         <LoginDescription />
       </div>

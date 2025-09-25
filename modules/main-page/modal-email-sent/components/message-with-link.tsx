@@ -1,10 +1,11 @@
 import { cn } from "@/shared/lib/utils";
 import Link from "next/link";
+import { useModalStore } from "@/shared/store/use-modal-store";
 
 export interface IMessageWithLink {
   message: string;
   link: string;
-  href?: string; 
+  href?: string;
   sectionClassName?: string;
 }
 
@@ -14,17 +15,31 @@ export function MessageWithLink({
   href = "#",
   sectionClassName,
 }: IMessageWithLink) {
+  const closeCustomModalOfEmailSentContent = useModalStore(
+    (state) => state.closeCustomModalOfEmailSentContent
+  );
+
+  const openCustomModalOfCreateNewPassword = useModalStore(
+    (state) => state.openCustomModalOfCreateNewPassword
+  );
+
   return (
     <section
       className={cn("flex items-center gap-[8px] text-sm ", sectionClassName)}
     >
-
       <span className="font-[500]">{message}</span>
 
-      <Link href={href} className="text-blue-600 font-medium hover:underline font-[500] underline">
+      <Link
+        onClick={(e) => {
+          e.preventDefault();
+          openCustomModalOfCreateNewPassword();
+          closeCustomModalOfEmailSentContent();
+        }}
+        href={href}
+        className="text-blue-600 font-medium hover:underline font-[500] underline"
+      >
         {link}
       </Link>
-
     </section>
   );
 }

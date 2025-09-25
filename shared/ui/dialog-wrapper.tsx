@@ -8,12 +8,14 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/shared/shad-cn/ui/dialog";
+import { RefObject } from "react";
 
 export interface DialogWrapperProps {
   Trigger: ReactNode | null;
   children: ReactNode;
   dialogContentClassName?: string;
   isOpen?: boolean;
+  ref?: RefObject<HTMLDivElement>;
   setIsOpen?:
     | Dispatch<SetStateAction<boolean>>
     | ((isModalOpen: boolean) => void);
@@ -21,7 +23,13 @@ export interface DialogWrapperProps {
 
 export const DialogWrapper = forwardRef<HTMLDivElement, DialogWrapperProps>(
   (
-    { Trigger, children, dialogContentClassName, isOpen, setIsOpen }: DialogWrapperProps,
+    {
+      Trigger,
+      children,
+      dialogContentClassName,
+      isOpen,
+      setIsOpen,
+    }: DialogWrapperProps,
     ref
   ) => {
     return (

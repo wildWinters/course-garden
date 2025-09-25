@@ -1,17 +1,17 @@
 "use client";
-
-import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/shared/shad-cn/ui/button";
-import Image from "next/image";
-import { SignInContentOfDialog } from "@/modules/main-page/modal-form/components/sign-in-content-of-dialog";
-import { Labels } from "@/shared/mock/labels";
-import { useUiStore } from "../../modal-form/store/ui/ui-store";
+import { useModalStore } from "@/shared/store/use-modal-store";
 
 export function LoginDescription() {
   const { t } = useTranslation();
-  const linkText = t("Open Dialog");
-  const modalFormsRef = useUiStore((state) => state.modalFormsRef);
+  const closeCustomModalOfForgotPassword = useModalStore(
+    (state) => state.closeCustomModalOfForgotPassword
+  );
+  const openCustomModalOfSignIn = useModalStore(
+    (state) => state.openCustomModalOfSignIn
+  );
+  
 
   return (
     <section className="flex gap-2 items-center justify-center text-center">
@@ -19,25 +19,16 @@ export function LoginDescription() {
         Remember Password?
       </span>
 
-      <DialogWrapper
-        ref={modalFormsRef}
-        Trigger={
-          <Button className="bg-transparent text-[14px] font-[600] text-[rgba(35,111,246,1)] hover:bg-transparent">
-            Login
-          </Button>
-        } 
+      <Button
+        onClick={() => {
+          openCustomModalOfSignIn();
+          closeCustomModalOfForgotPassword();
+        }}
+        className="bg-transparent text-[14px] font-[600] text-[rgba(35,111,246,1)] hover:bg-transparent"
       >
-        <div className="flex w-full">
-          <SignInContentOfDialog labels={Labels} />
-          <Image
-            src="/img/robo-handlers.png"
-            alt="robo-handlers"
-            width={400}
-            height={400}
-            className="min-h-[100%] w-1/2 h-full hidden md:block"
-          />
-        </div>
-      </DialogWrapper>
+        Login
+      </Button>
+      
     </section>
   );
 }

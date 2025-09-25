@@ -25,19 +25,4 @@ export function ModalEmailSendWrapper() {
   );
 }
 
-// <DialogWrapper
-//   dialogContentClassName="flex flex-col gap-[20px] min-w-[300px] max-w-[500px] !p-[40px] rounded-2xl bg-white"
-//   Trigger={Trigger}
-// >
-//   <ModalSendEmailTitle email={t("modal-email-sent.email")}>
-//     <MessageWithLink
-//       message="Did not receive the email?"
-//       link="Resend Email"
-//     />
 
-//     <MessageWithLink
-//       message="Wrong Email Address?"
-//       link="Change Email Address"
-//     />
-//   </ModalSendEmailTitle>
-// </DialogWrapper>
