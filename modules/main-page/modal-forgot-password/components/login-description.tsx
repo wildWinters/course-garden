@@ -6,12 +6,11 @@ import { useModalStore } from "@/shared/store/use-modal-store";
 export function LoginDescription() {
   const { t } = useTranslation();
   const closeCustomModalOfForgotPassword = useModalStore(
-    (state) => state.closeCustomModalOfForgotPassword
+    (state) => state.closeCustomModalOfForgotPassword,
   );
   const openCustomModalOfSignIn = useModalStore(
-    (state) => state.openCustomModalOfSignIn
+    (state) => state.openCustomModalOfSignIn,
   );
-  
 
   return (
     <section className="flex gap-2 items-center justify-center text-center">
@@ -28,7 +27,6 @@ export function LoginDescription() {
       >
         Login
       </Button>
-      
     </section>
   );
 }

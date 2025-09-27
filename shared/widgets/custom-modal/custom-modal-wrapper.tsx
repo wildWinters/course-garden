@@ -1,11 +1,10 @@
 "use client";
-
 import { createPortal } from "react-dom";
 import { ReactNode, useEffect, useState } from "react";
 import { XIcon } from "lucide-react";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { cn } from "@/shared/lib/utils";
- 
+
 export interface ICustomModal {
   id: string;
   children: ReactNode;
@@ -36,7 +35,7 @@ export function CustomModal({
   useEffect(() => {
     if (isOpen) setShow(true);
     else {
-      const timeout = setTimeout(() => setShow(false), 500); // довший тайм-аут для плавного закриття
+      const timeout = setTimeout(() => setShow(false), 500);
       return () => clearTimeout(timeout);
     }
   }, [isOpen]);
@@ -56,7 +55,7 @@ export function CustomModal({
           `bg-white p-4 rounded-lg relative transform transition-all duration-500 ease-out ${
             isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`,
-          customModalClassName
+          customModalClassName,
         )}
         onClick={(e) => e.stopPropagation()}
       >
@@ -66,6 +65,6 @@ export function CustomModal({
         {children}
       </div>
     </div>,
-    document.body
+    document.body,
   );
 }

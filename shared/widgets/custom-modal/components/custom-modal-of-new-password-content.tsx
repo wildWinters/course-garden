@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@/shared/shad-cn/ui/button";
-import { LabelInput } from "@/modules/main-page/modal-form/components/label-input";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up/components/label-input";
 import { Eye } from "lucide-react";
 import { CreateNewPasswordTitle } from "@/modules/main-page/modal-create-new-password/components/create-new-password-title";
 
-export function CustomModalOfOnePassword()  {
+export function CustomModalOfOnePassword() {
   return (
     <>
       <div className="flex flex-col gap-[20px] min-w-[300px] max-w-[500px] !p-[40px] rounded-2xl bg-white">

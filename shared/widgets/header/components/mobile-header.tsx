@@ -4,27 +4,47 @@ import Image from "next/image";
 import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { Menu } from "lucide-react";
-import { SignInContentOfDialog } from "@/modules/main-page/modal-form/components/sign-in-content-of-dialog";
+import { SignInOrUpContentOfDialog } from "@/modules/main-page/modal-form-sign-in-or-up/components/sign-in-content-of-dialog";
 import { Labels } from "@/shared/mock/labels";
+import { useModalStore } from "@/shared/store/use-modal-store";
+import { useEffect } from "react";
 
 export function MobileHeader() {
   const { t } = useTranslation();
   const navigation = t("app.navigation", { returnObjects: true }) || [];
   const safeNavigation = Array.isArray(navigation) ? navigation : [];
+  const isSignUpShadCnModalOpen = useModalStore(
+    (state) => state.isSignUpShadCnModalOpen,
+  );
+  const openSignUpShadCnModal = useModalStore(
+    (state) => state.openSignUpShadCnModal,
+  );
+  const closeSignUpShadCnModal = useModalStore(
+    (state) => state.closeSignUpShadCnModal,
+  );
+  // const inOrUp =  useModalStore(state => state. )
+
+  const inOrUp = useModalStore((state) => state.inOrUp);
 
   return (
     <header className="flex h-[80px] items-center justify-between lg:hidden mx-[10vw] mt-[20px]">
       <Image src="/img/Sign.jpg" alt="Sign" width={81} height={81} />
 
       <DialogWrapper
+        hadnleCloseModal={closeSignUpShadCnModal}
         Trigger={
-          <Button className="w-[29vw] h-[40px]" variant="purple">
+          <Button
+            onClick={openSignUpShadCnModal}
+            className="w-[29vw] h-[40px]"
+            variant="purple"
+          >
             {t("auth.login.footer.link.label")}
           </Button>
         }
+        isOpen={isSignUpShadCnModalOpen}
       >
         <div className="flex w-full">
-          <SignInContentOfDialog labels={Labels} inOrUp="up" />
+          <SignInOrUpContentOfDialog labels={Labels} inOrUp={inOrUp} />
           <Image
             src="/img/robo-handlers.png"
             alt="robo-handlers"
@@ -54,4 +74,3 @@ export function MobileHeader() {
     </header>
   );
 }
- 

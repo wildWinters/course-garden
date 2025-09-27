@@ -16,11 +16,11 @@ export function MessageWithLink({
   sectionClassName,
 }: IMessageWithLink) {
   const closeCustomModalOfEmailSentContent = useModalStore(
-    (state) => state.closeCustomModalOfEmailSentContent
+    (state) => state.closeCustomModalOfEmailSentContent,
   );
 
-  const openCustomModalOfCreateNewPassword = useModalStore(
-    (state) => state.openCustomModalOfCreateNewPassword
+  const openCustomModalOfForgotPassword = useModalStore(
+    (state) => state.openCustomModalOfForgotPassword,
   );
 
   return (
@@ -32,7 +32,7 @@ export function MessageWithLink({
       <Link
         onClick={(e) => {
           e.preventDefault();
-          openCustomModalOfCreateNewPassword();
+          openCustomModalOfForgotPassword();
           closeCustomModalOfEmailSentContent();
         }}
         href={href}

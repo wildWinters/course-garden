@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { IBaseProps } from "@/shared/types/base-props";
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";

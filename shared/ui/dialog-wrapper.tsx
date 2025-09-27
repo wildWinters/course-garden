@@ -19,6 +19,7 @@ export interface DialogWrapperProps {
   setIsOpen?:
     | Dispatch<SetStateAction<boolean>>
     | ((isModalOpen: boolean) => void);
+  hadnleCloseModal?: () => void;
 }
 
 export const DialogWrapper = forwardRef<HTMLDivElement, DialogWrapperProps>(
@@ -29,8 +30,9 @@ export const DialogWrapper = forwardRef<HTMLDivElement, DialogWrapperProps>(
       dialogContentClassName,
       isOpen,
       setIsOpen,
+      hadnleCloseModal,
     }: DialogWrapperProps,
-    ref
+    ref,
   ) => {
     return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -39,7 +41,7 @@ export const DialogWrapper = forwardRef<HTMLDivElement, DialogWrapperProps>(
           ref={ref}
           className={cn(
             "flex w-[92vw] md:w-[80vw] !p-[0px] gap-2 rounded-2xl",
-            dialogContentClassName
+            dialogContentClassName,
           )}
           style={borderGradient}
         >
@@ -48,11 +50,11 @@ export const DialogWrapper = forwardRef<HTMLDivElement, DialogWrapperProps>(
             className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-md text-gray-500 hover:bg-gray-100 focus:outline-none"
             aria-label="Close"
           >
-            ✕
+            <span onClick={hadnleCloseModal}>✕</span>
           </DialogClose>
           {children}
         </DialogContent>
       </Dialog>
     );
-  }
+  },
 );

@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/shared/shad-cn/ui/button";
-import { LabelInput } from "@/modules/main-page/modal-form/components/label-input";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up/components/label-input";
 import { LoginDescription } from "@/modules/main-page/modal-forgot-password/components/login-description";
 import { ForgotPasswordHeading } from "@/modules/main-page/modal-forgot-password/components/forgot-password-heading";
 import { Mail } from "lucide-react";
@@ -24,13 +24,7 @@ export function CustomModalOfForgotPassword() {
             className={cn("absolute text-[14px] left-[10px] cursor-pointer")}
           />
         </LabelInput>
-        <ModalEmailSendWrapper
-        // Trigger={
-        //   <Button variant={"purple"}>
-        //     {t("auth.modal-forgot-password.email")}
-        //   </Button>
-        // }
-        />
+        <ModalEmailSendWrapper />
         <LoginDescription />
       </div>
     </>

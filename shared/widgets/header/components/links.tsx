@@ -3,7 +3,7 @@ import { cn } from "@/shared/lib/utils";
 import HEADER_LINKS from "@/shared/widgets/header/const/header-links";
 import { Last_LIST_ELEMENT_BUTTON } from "@/shared/widgets/header/const/tw-list-button";
 import { Labels } from "@/shared/mock/labels";
-import { ModalFormWrapper } from "@/modules/main-page/modal-form/forms-wrapper";
+import { ModalFormWrapper } from "@/modules/main-page/modal-form-sign-in-or-up/forms-wrapper";
 import Image from "next/image";
 import { useModalStore } from "@/shared/store/use-modal-store";
 
@@ -31,7 +31,7 @@ export function LinksList({
               onClick={openCustomModalOfSignIn}
               className={cn("list-none", Last_LIST_ELEMENT_BUTTON)}
             >
-              sign in 
+              sign in
               <ModalFormWrapper />
             </li>
           );
@@ -41,7 +41,7 @@ export function LinksList({
           <li
             key={link}
             className={cn(
-              "text-[14px] font-medium cursor-pointer hover:opacity-80 transition-opacity list-none"
+              "text-[14px] font-medium cursor-pointer hover:opacity-80 transition-opacity list-none",
             )}
           >
             {linkText}

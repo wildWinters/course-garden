@@ -21,7 +21,6 @@ export function ModalSendEmailTitle({ email, children }: IModalSendEmailTitle) {
         </span>
 
         <div className="flex flex-col gap-[20px]">{children}</div>
-
       </div>
     </section>
   );

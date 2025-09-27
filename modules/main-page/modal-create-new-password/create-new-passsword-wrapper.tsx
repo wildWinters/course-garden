@@ -3,8 +3,6 @@ import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper"
 import { CustomModalOfOnePassword } from "@/shared/widgets/custom-modal/components/custom-modal-of-new-password-content";
 import { useModalStore } from "@/shared/store/use-modal-store";
 
-
-
 export function CreateNewPasswordWrapper() {
   const {
     isCustomModalOfCreateNewPasswordOpen,
