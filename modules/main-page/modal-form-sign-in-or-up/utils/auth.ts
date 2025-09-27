@@ -18,3 +18,19 @@ export function getCurrentUser(): DecodedUser | null {
     return null;
   }
 }
+
+export function isTokenExpired(): boolean {
+  const user = getCurrentUser();
+  if (!user || !user.exp) return true;
+  return Date.now() >= user.exp * 1000;
+}
+
+export function getUserRole(): string | null {
+  const user = getCurrentUser();
+  return user?.role || null;
+}
+
+export function getUserId(): string | null {
+  const user = getCurrentUser();
+  return user?.id || null;
+}

@@ -4,20 +4,19 @@ import { Labels } from "@/shared/mock/labels";
 import { GrettingsRegistration } from "./grettings-registration";
 import { AgreeWithTermsOfUseAndPrivacyPolicy } from "./agree-with-terms-of-use-and-privacy-policy";
 import { ButtonsBLock } from "./buttons-block";
-import { DescriptionBlock } from "./description-block";
 import { EyeOff, Eye } from "lucide-react";
 import { LabelInput } from "./label-input";
 import { FormData } from "../model/form-schema";
 import { useForm, Controller } from "react-hook-form";
 import { useState } from "react";
 import { cn } from "@/shared/lib/utils";
-import { useUiStore } from "../store/ui/ui-store";
 import { useModalStore } from "@/shared/store/use-modal-store";
 import { DescriptionBLockSignUp } from "./DescriptionBLockSignUp";
 import { DescriptionBLockSignIn } from "./DescriptionBLockSignIn";
 import { kyInstance } from "@/shared/lib/ky-instance";
-import { useRouter } from "next/navigation"; // ✅ правильний імпорт для App Router
+import { useRouter } from "next/navigation"; 
 import { getCurrentUser } from "../utils/auth";
+import { useAuthStore } from "@/shared/store/useAuthStore";
 
 export interface ISignInOrUpContentOfDialog {
   labels?: typeof Labels;
@@ -30,6 +29,7 @@ export function SignInOrUpContentOfDialog({
 }: ISignInOrUpContentOfDialog) {
   const router = useRouter();
   const inOrUps = useModalStore((state) => state.inOrUp);
+  const login = useAuthStore((state) => state.login);
   const [isNotClickedToClose, setIsNotClickedToClose] = useState<boolean>(true);
   const [isTypeOrPasswordInput, setIsTypeOrPasswordInput] = useState<
     "type" | "password"
@@ -56,13 +56,15 @@ export function SignInOrUpContentOfDialog({
         .json<{ token: string }>();
 
       if (res.token) {
-        localStorage.setItem("token", res.token);
-
         const user = getCurrentUser();
-        if (user?.role === "admin") {
-          router.push("/admin");
-        } else {
-          router.push("/student-page");
+        if (user) {
+          login(res.token, user.role as "admin" | "user", user.id);
+
+          if (user.role === "admin") {
+            router.push("/admin");
+          } else {
+            router.push("/student-page");
+          }
         }
       }
     } catch (error) {
