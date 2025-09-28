@@ -8,34 +8,52 @@ import {
   TableRow,
 } from "@/shared/shad-cn/ui/table";
 import { mockTableHead } from "../mock/mock-table-head";
-import { Checkbox } from "@radix-ui/react-checkbox";
+import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
+import { mockTableData } from "../mock/mock-table-data";
 
 export function TableModeMyCourses() {
   return (
-    <>
-      <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
-        <TableHeader>
-          <TableRow className="h-[48px] text-[rgba(160,160,181,1)]">
-            <TableHead className="relative">
-              <Checkbox className="w-4 h-4 border-2 border-[rgba(45,30,99,1)] rounded-[4px]" />
+    <Table className="w-full border border-gray-200 rounded-lg overflow-hidden text-sm">
+      <TableCaption className="text-gray-500">
+        A list of your recent invoices.
+      </TableCaption>
+
+       <TableHeader className="bg-gray-50">
+        <TableRow className="h-12 text-gray-500">
+        
+          <TableHead className="w-12 text-center">
+            <Checkbox />
+          </TableHead>
+
+
+          {mockTableHead.map((item) => (
+            <TableHead key={item} className="text-left font-semibold">
+              {item}
             </TableHead>
-            {mockTableHead.map((item) => (
-              <TableHead key={item}>{item}</TableHead>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow className="flex items-center h-[48px]">
-            <TableCell className="font-medium">
-              <Checkbox className="w-4 h-4 border-2 border-[rgba(45,30,99,1)] rounded-[8px]" />
+          ))}
+        </TableRow>
+      </TableHeader>
+
+      <TableBody>
+        {mockTableData.map((row) => (
+          <TableRow
+            key={row.id}
+            className="h-12 border-t border-gray-200 hover:bg-gray-50"
+          >
+
+            <TableCell className="w-12 text-center">
+              <Checkbox />
             </TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Credit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
+          
+            <TableCell className="font-medium">{row.name}</TableCell>
+            <TableCell>{row.passed}</TableCell>
+            <TableCell>{row.rating}</TableCell>
+            <TableCell>{row.views}</TableCell>
+            <TableCell>{row.reviews}</TableCell>
+            <TableCell className="text-right">{row.amount}</TableCell>
           </TableRow>
-        </TableBody>
-      </Table>
-    </>
+        ))}
+      </TableBody>
+    </Table>
   );
 }
