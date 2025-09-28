@@ -14,7 +14,7 @@ import { useModalStore } from "@/shared/store/use-modal-store";
 import { DescriptionBLockSignUp } from "./DescriptionBLockSignUp";
 import { DescriptionBLockSignIn } from "./DescriptionBLockSignIn";
 import { kyInstance } from "@/shared/lib/ky-instance";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { getCurrentUser } from "../utils/auth";
 import { useAuthStore } from "@/shared/store/useAuthStore";
 
