@@ -1,12 +1,12 @@
-import { ControlButtonSectionWrapper } from "@/modules/admin-page-my-courses/controls-button-section/contols-button-section-wrapper";
-import { Toggle } from "@/modules/admin-page-my-courses/controls-button-section/components/toggle";
-import { SortBy } from "@/modules/admin-page-my-courses/controls-button-section/components/sort-by";
-import { MyCoursesSectionWrapper } from "@/modules/admin-page-my-courses/my-courses-section/my-courses-section-wrapper";
-import { MyCoursesCardMode } from "@/modules/admin-page-my-courses/my-courses-section/components/card-mode-my-courses";
+import { ControlButtonSectionWrapper } from "@/modules/my-courses-admin-page/controls-button-section/contols-button-section-wrapper";
+import { Toggle } from "@/modules/my-courses-admin-page/controls-button-section/components/toggle";
+import { SortBy } from "@/modules/my-courses-admin-page/controls-button-section/components/sort-by";
+import { MyCoursesSectionWrapper } from "@/modules/my-courses-admin-page/my-courses-section/my-courses-section-wrapper";
+import { MyCoursesCardMode } from "@/modules/my-courses-admin-page/my-courses-section/components/card-mode-my-courses";
 import { AppSidebar } from "@/shared/widgets/aside-panel/aside-panel-wrapper";
 import { ListElement } from "@/shared/widgets/aside-panel/components/list-element";
 import { sidebarMenu } from "@/shared/widgets/aside-panel/mock/mock-panel";
-import { PaginationWrapper } from "@/modules/admin-page-my-courses/pagination/pagination-wrapper";
+import { PaginationWrapper } from "@/modules/my-courses-admin-page/pagination/pagination-wrapper";
 
 export default function AdminPageMyCourses() {
   return (
@@ -16,11 +16,11 @@ export default function AdminPageMyCourses() {
           <ListElement
             key={item.id}
             title={item.label}
-            iconName={item.iconName} 
+            iconName={item.iconName}
             path={item.path}
           />
         ))}
-      </AppSidebar> 
+      </AppSidebar>
 
       <div className="flex flex-col flex-1 gap-[20px]">
         <ControlButtonSectionWrapper>
@@ -35,4 +35,3 @@ export default function AdminPageMyCourses() {
     </section>
   );
 }
-
