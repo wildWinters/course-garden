@@ -1,21 +1,27 @@
 "use client";
-
+import { MouseEvent } from "react";
 import { List, Image } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/shared/lib/utils";
+import { useVisualModeStore } from "../store/use-visual-mode-store";
 
 export function Toggle() {
   const [isToggled, setIsToggled] = useState<"left" | "right" | null>(null);
+  const setVisualModeCard = useVisualModeStore(
+    (state) => state.setVisualModeCard
+  );
 
-  const handleLeftClick = (e: React.MouseEvent) => {
+  const handleLeftClick = (e: MouseEvent) => {
     e.stopPropagation();
 
     setIsToggled(isToggled === "left" ? null : "left");
+    setVisualModeCard("card");
   };
 
-  const handleRightClick = (e: React.MouseEvent) => {
+  const handleRightClick = (e: MouseEvent) => {
     e.stopPropagation();
     setIsToggled(isToggled === "right" ? null : "right");
+    setVisualModeCard("table");
   };
 
   return (
@@ -27,15 +33,16 @@ export function Toggle() {
         onClick={handleLeftClick}
         className={cn(
           "text-black p-[2px] rounded-[5px]",
-          isToggled === "left" && "bg-white text-[rgba(45,30,99,1)]",
+          isToggled === "left" && "bg-white text-[rgba(45,30,99,1)]"
         )}
+
       />
 
       <List
         onClick={handleRightClick}
         className={cn(
           "text-black rotate-180 p-[2px] rounded-[5px]",
-          isToggled === "right" && "bg-white text-[rgba(45,30,99,1)]",
+          isToggled === "right" && "bg-white text-[rgba(45,30,99,1)]"
         )}
       />
     </div>

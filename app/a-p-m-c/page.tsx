@@ -1,3 +1,4 @@
+"use client"
 import { ControlButtonSectionWrapper } from "@/modules/my-courses-admin-page/controls-button-section/contols-button-section-wrapper";
 import { Toggle } from "@/modules/my-courses-admin-page/controls-button-section/components/toggle";
 import { SortBy } from "@/modules/my-courses-admin-page/controls-button-section/components/sort-by";
@@ -7,8 +8,15 @@ import { AppSidebar } from "@/shared/widgets/aside-panel/aside-panel-wrapper";
 import { ListElement } from "@/shared/widgets/aside-panel/components/list-element";
 import { sidebarMenu } from "@/shared/widgets/aside-panel/mock/mock-panel";
 import { PaginationWrapper } from "@/modules/my-courses-admin-page/pagination/pagination-wrapper";
+import { useVisualModeStore } from "@/modules/my-courses-admin-page/controls-button-section/store/use-visual-mode-store";
+import { TableModeMyCourses } from "@/modules/my-courses-admin-page/my-courses-section/components/table-mode-my-courses";
+import { cn } from "@/shared/lib/utils";
+import { TableModeButtonsSections } from "@/modules/my-courses-admin-page/controls-button-section/components/table-mode-buttons-section";
+
 
 export default function AdminPageMyCourses() {
+  const visualModeCard = useVisualModeStore((state) => state.visualModeCard);
+
   return (
     <section className="flex gap-[20px] mx-[10vw]">
       <AppSidebar progress={1} generalCount={3}>
@@ -25,11 +33,13 @@ export default function AdminPageMyCourses() {
       <div className="flex flex-col flex-1 gap-[20px]">
         <ControlButtonSectionWrapper>
           <Toggle />
-          <SortBy />
+          <SortBy className={cn(visualModeCard === "table" && "hidden")} />
+          <TableModeButtonsSections className={cn(visualModeCard === "card" && "hidden")} />
         </ControlButtonSectionWrapper>
-        <MyCoursesSectionWrapper>
+        <MyCoursesSectionWrapper className={`${visualModeCard !== "card"  && "hidden"}`}>
           <MyCoursesCardMode />
         </MyCoursesSectionWrapper>
+          <TableModeMyCourses className={`${visualModeCard !== "table"  && "hidden"}`} />
         <PaginationWrapper />
       </div>
     </section>

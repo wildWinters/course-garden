@@ -3,12 +3,17 @@ import { Card, CardContent, CardFooter } from "@/shared/shad-cn/ui/card";
 import { mockCourses } from "../mock/mock-courses";
 import { CardInfo } from "./card-mode-info";
 import { ButtonsSection } from "./cards-mode-buttons-section";
+import { cn } from "@/shared/lib/utils";
 
-export function MyCoursesCardMode() {
+export interface MyCourseCardMode {
+  className?: string;
+}
+
+export function MyCoursesCardMode({ className }: MyCourseCardMode) {
   return (
     <>
       {mockCourses.map((card) => (
-        <Card key={card.id} className="border-none">
+        <Card key={card.id} className={cn("border-none", className)}>
           <CardContent className="flex min-h-[180px] items-center gap-[16px]  p-4 bg-[rgba(247,249,251,1)]">
             <img
               src="/img/Picture.jpg"

@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { IBaseProps } from "@/shared/types/base-props";
+import { cn } from "@/shared/lib/utils";
 
-export function SortBy() {
+export function SortBy( {className }: IBaseProps) {
   return (
-    <div className="flex items-center justify-center gap-[20px] rounded-[8px]  text-[rgba(45,30,99,1)] font-[600] h-[32px] px-[10px]">
+    <div className={cn("flex items-center justify-center gap-[20px] rounded-[8px]  text-[rgba(45,30,99,1)] font-[600] h-[32px] px-[10px]",className)}>
       <span className="">Sort by</span>
       <Image
         src="/img/sort.svg"
