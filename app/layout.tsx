@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { DesktopHeader } from "@/shared/widgets/header/header-wrapper";
 import { HeaderLogo } from "@/shared/widgets/header/components/header-logo";
-import { HeaderLinks } from "@/shared/widgets/header/components/header-links";
 import { Cabin } from "next/font/google";
 import { MobileHeader } from "@/shared/widgets/header/components/mobile-header";
 import { Providers } from "./providers";
+import { HeaderUserRightPanel } from "@/shared/widgets/header/components/header-user-right-panel";
+import "./globals.css";
 import "@/shared/i18n/i18n";
-import { SidebarProvider } from "@/shared/shad-cn/ui/sidebar";
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -47,13 +46,12 @@ export default function RootLayout({
         <Providers>
           <DesktopHeader>
             <HeaderLogo />
-            <HeaderLinks />
+            {/* <HeaderLinks /> */}
+            <HeaderUserRightPanel/>
           </DesktopHeader>
           <MobileHeader />
           <div id="modal-root"></div>
-          {/* <SidebarProvider> */}
           {children}
-          {/* </SidebarProvider> */}
         </Providers>
       </body>
     </html>
