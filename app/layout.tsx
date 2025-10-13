@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { HeaderUserRightPanel } from "@/shared/widgets/header/components/header-user-right-panel";
 import "./globals.css";
 import "@/shared/i18n/i18n";
+import { HeaderLinks } from "@/shared/widgets/header/components/header-links";
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -47,7 +48,7 @@ export default function RootLayout({
           <DesktopHeader>
             <HeaderLogo />
             {/* <HeaderLinks /> */}
-            <HeaderUserRightPanel/>
+            <HeaderUserRightPanel />
           </DesktopHeader>
           <MobileHeader />
           <div id="modal-root"></div>

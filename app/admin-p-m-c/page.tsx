@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ControlButtonSectionWrapper } from "@/modules/my-courses-admin-page/controls-button-section/contols-button-section-wrapper";
 import { Toggle } from "@/modules/my-courses-admin-page/controls-button-section/components/toggle";
 import { SortBy } from "@/modules/my-courses-admin-page/controls-button-section/components/sort-by";
@@ -12,7 +12,6 @@ import { useVisualModeStore } from "@/modules/my-courses-admin-page/controls-but
 import { TableModeMyCourses } from "@/modules/my-courses-admin-page/my-courses-section/components/table-mode-my-courses";
 import { cn } from "@/shared/lib/utils";
 import { TableModeButtonsSections } from "@/modules/my-courses-admin-page/controls-button-section/components/table-mode-buttons-section";
-
 
 export default function AdminPageMyCourses() {
   const visualModeCard = useVisualModeStore((state) => state.visualModeCard);
@@ -34,12 +33,18 @@ export default function AdminPageMyCourses() {
         <ControlButtonSectionWrapper>
           <Toggle />
           <SortBy className={cn(visualModeCard === "table" && "hidden")} />
-          <TableModeButtonsSections className={cn(visualModeCard === "card" && "hidden")} />
+          <TableModeButtonsSections
+            className={cn(visualModeCard === "card" && "hidden")}
+          />
         </ControlButtonSectionWrapper>
-        <MyCoursesSectionWrapper className={`${visualModeCard !== "card"  && "hidden"}`}>
+        <MyCoursesSectionWrapper
+          className={`${visualModeCard !== "card" && "hidden"}`}
+        >
           <MyCoursesCardMode />
         </MyCoursesSectionWrapper>
-          <TableModeMyCourses className={`${visualModeCard !== "table"  && "hidden"}`} />
+        <TableModeMyCourses
+          className={`${visualModeCard !== "table" && "hidden"}`}
+        />
         <PaginationWrapper />
       </div>
     </section>

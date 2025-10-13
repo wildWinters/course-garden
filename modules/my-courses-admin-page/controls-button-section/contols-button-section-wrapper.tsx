@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 export function ControlButtonSectionWrapper({
   children,
   classname,
-  isLeftHeadingExists =  true,
+  isLeftHeadingExists = true,
 }: {
   children: ReactNode;
   classname?: string;
@@ -17,7 +17,12 @@ export function ControlButtonSectionWrapper({
         classname,
       )}
     >
-      <span className={cn("text-[rgba(45,30,99,1)] font-[600] text-[16px]", !isLeftHeadingExists && "hidden")}>
+      <span
+        className={cn(
+          "text-[rgba(45,30,99,1)] font-[600] text-[16px]",
+          !isLeftHeadingExists && "hidden",
+        )}
+      >
         My courses
       </span>
 

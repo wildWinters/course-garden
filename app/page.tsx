@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/home-screen-redesign");
+    router.push("/my-courses-edit-user-admin-page");
   }, [router]);
 
   return null;

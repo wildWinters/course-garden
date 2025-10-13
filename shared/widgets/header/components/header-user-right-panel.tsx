@@ -1,16 +1,23 @@
-"use client"
+"use client";
 import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up/components/label-input";
 import { Search, Settings, BellDot } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/shared/lib/utils";
 import { usePathname } from "next/navigation";
 
-export function HeaderUserRightPanel({className}: {className?: string}) {
+export function HeaderUserRightPanel({ className }: { className?: string }) {
   const pathname = usePathname();
-  const isRenderComponent = pathname.includes("admin") || pathname.includes("user");
-  
+  const isRenderComponent =
+    pathname.includes("admin") || pathname.includes("user");
+
   return (
-    <div className={cn("flex items-center gap-4", className, !isRenderComponent && "hidden" )}>
+    <div
+      className={cn(
+        "flex items-center gap-4",
+        className,
+        !isRenderComponent && "hidden",
+      )}
+    >
       <LabelInput
         InputClassName="w-[20vw] pl-9 pr-3 py-2 placeholder:text-gray-400"
         isLabelEsists={false}

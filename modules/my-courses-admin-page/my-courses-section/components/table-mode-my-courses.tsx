@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Table,
   TableBody,
@@ -25,11 +25,16 @@ export function TableModeMyCourses({
   className,
 }: ITableModeMyCourses) {
   const [data, setData] = useState<boolean[]>(
-    Array(mockTableDataProps.length).fill(false)
+    Array(mockTableDataProps.length).fill(false),
   );
 
   return (
-    <Table className={cn("w-[71vw] bg-[rgba(247,249,251,1)] border border-gray-200 rounded-lg overflow-hidden text-sm", className)}>
+    <Table
+      className={cn(
+        "w-[71vw] bg-[rgba(247,249,251,1)] border border-gray-200 rounded-lg overflow-hidden text-sm",
+        className,
+      )}
+    >
       <TableCaption className="text-gray-500">
         A list of your recent invoices.
       </TableCaption>

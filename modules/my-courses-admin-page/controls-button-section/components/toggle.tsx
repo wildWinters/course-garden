@@ -8,7 +8,7 @@ import { useVisualModeStore } from "../store/use-visual-mode-store";
 export function Toggle() {
   const [isToggled, setIsToggled] = useState<"left" | "right" | null>(null);
   const setVisualModeCard = useVisualModeStore(
-    (state) => state.setVisualModeCard
+    (state) => state.setVisualModeCard,
   );
 
   const handleLeftClick = (e: MouseEvent) => {
@@ -33,16 +33,15 @@ export function Toggle() {
         onClick={handleLeftClick}
         className={cn(
           "text-black p-[2px] rounded-[5px]",
-          isToggled === "left" && "bg-white text-[rgba(45,30,99,1)]"
+          isToggled === "left" && "bg-white text-[rgba(45,30,99,1)]",
         )}
-
       />
 
       <List
         onClick={handleRightClick}
         className={cn(
           "text-black rotate-180 p-[2px] rounded-[5px]",
-          isToggled === "right" && "bg-white text-[rgba(45,30,99,1)]"
+          isToggled === "right" && "bg-white text-[rgba(45,30,99,1)]",
         )}
       />
     </div>

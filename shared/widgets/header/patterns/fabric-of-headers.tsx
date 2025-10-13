@@ -1,9 +1,3 @@
-
 export function FabricOfHeaders() {
-
-  return ( 
-    <>
- 
-    </>
-  )
-}  
+  return <></>;
+}

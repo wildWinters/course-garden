@@ -1,4 +1,3 @@
-
 interface CourseData {
   id: number;
   name: string;
