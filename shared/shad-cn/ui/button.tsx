@@ -23,6 +23,8 @@ const buttonVariants = cva(
         purple: `flex items-center justify-center h-[40px] 
           bg-[rgba(241,120,182,1)] text-white rounded-[8px]`,
         google: `relative inline-flex items-center justify-center  rounded-lg p-[2px]  bg-gradient-to-br from-[#C2CCE3] via-[#9D82FD] to-[#5E4E97] `,
+        purpleBorder:
+          "border-1 border-[rgba(241,120,182,1)] text-[rgba(241,120,182,1)] rounded-[8px]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

@@ -5,12 +5,15 @@ import { ListElement } from "@/shared/widgets/aside-panel/components/list-elemen
 import { sidebarMenu } from "@/shared/widgets/aside-panel/mock/mock-panel";
 import { useVisualModeStore } from "@/modules/my-courses-admin-page/controls-button-section/store/use-visual-mode-store";
 import { TableModeButtonsSections } from "@/modules/my-courses-admin-page/controls-button-section/components/table-mode-buttons-section";
-import { EditCourseHeading } from "@/modules/my-corses-edit-admin-page/headings/components/heading-edit-course";
-import { HeadingLinks } from "@/modules/my-corses-edit-admin-page/headings/components/heading-links";
-import { Links } from "@/modules/my-corses-edit-admin-page/headings/mock/mock-links";
+import { EditCourseHeading } from "@/modules/edit-course-admin-page/headings/components/heading-edit-course";
+import { HeadingLinks } from "@/modules/edit-course-admin-page/headings/components/heading-links";
+import { Links } from "@/modules/edit-course-admin-page/headings/mock/mock-links";
+import { EditCourseCardWrapper } from "@/modules/edit-course-admin-page/edit-course-card/edit-course-card-wrapper";
+
 
 export default function Page() {
   const visualModeCard = useVisualModeStore((state) => state.visualModeCard);
+
   return (
     <section className="flex gap-[20px] mx-[10vw]">
       <AppSidebar progress={1} generalCount={3}>
@@ -34,6 +37,7 @@ export default function Page() {
         <EditCourseHeading>
           <TableModeButtonsSections />
         </EditCourseHeading>
+        <EditCourseCardWrapper/>
       </div>
     </section>
   );
