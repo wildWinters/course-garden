@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   // experimental: {
   //   turbo: true,
   // },
+  reactCompiler: true,
   turbopack: {
     rules: {
       "*.svg": {
