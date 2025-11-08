@@ -1,0 +1,10 @@
+{
+  "posts": [
+    { "id": 1, "title": "Hello World" },
+    { "id": 2, "title": "JSON Server Example" }
+  ],
+  "users": [
+    { "id": 1, "name": "Ostap" },
+    { "id": 2, "name": "Anna" }
+  ]
+}

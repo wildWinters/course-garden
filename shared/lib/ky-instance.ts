@@ -6,7 +6,8 @@ export const kyInstance = ky.create({
   retry: {
     limit: 2,
   },
-  hooks: {
+  hooks
+  : {
     beforeRequest: [
       (request) => {
         const token = localStorage.getItem("token");

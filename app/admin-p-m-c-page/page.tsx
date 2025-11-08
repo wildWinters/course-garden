@@ -15,7 +15,7 @@ import { TableModeButtonsSections } from "@/modules/my-courses-admin-page/contro
 
 export default function AdminPageMyCourses() {
   const visualModeCard = useVisualModeStore((state) => state.visualModeCard);
-
+  
   return (
     <section className="flex gap-[20px] mx-[10vw]">
       <AppSidebar progress={1} generalCount={3}>

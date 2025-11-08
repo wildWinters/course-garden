@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+
 export interface ICardInfoProps {
   isActive: boolean;
   titleCourse: string;
@@ -13,7 +14,6 @@ export function CardInfo({
   children,
 }: ICardInfoProps) {
   return (
-    <>
       <div className="flex flex-col gap-[10px] text-[rgba(45,30,99,1)]">
         <div className="flex items-center justify-between">
           <span className="text-[20px] text-ellipsis font-[500]">
@@ -28,6 +28,5 @@ export function CardInfo({
         </span>
         {children}
       </div>
-    </>
   );
 }

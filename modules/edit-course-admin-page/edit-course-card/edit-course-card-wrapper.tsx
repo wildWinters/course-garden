@@ -13,8 +13,9 @@ import { stats } from "./mock/mock-stats";
 export function EditCourseCardWrapper() {
   return (
     <>
-      <section className="grid grid-cols-3 gap-x-6 w-full h-[393px] rounded-[8px] bg-[rgba(247,249,251,1)] p-[16px]">
+      <section className="grid grid-cols-3 w-full  rounded-[8px] bg-[rgba(247,249,251,1)] p-[16px]">
         <Image
+          className="rounded-[20px] aspect-square"
           src="/img/card.jpg"
           width={180}
           height={180}
@@ -22,13 +23,14 @@ export function EditCourseCardWrapper() {
         />
         <div className="flex flex-col gap-[16px]">
           <Tabs defaultValue="account" className="w-[400px]">
-            <TabsList>
-              <TabsTrigger value="account">Public</TabsTrigger>
-              <TabsTrigger value="password">Private</TabsTrigger>
+            <TabsList className="bg-[rgba(227,240,253,1)]">
+              <TabsTrigger className="text-[rgba(160,160,181,1)] data-[state=active]:text-black" value="account">Public</TabsTrigger>
+              <TabsTrigger className="text-[rgba(160,160,181,1)] data-[state=active]:text-black" value="password">Private</TabsTrigger>
             </TabsList>
             <TabsContent value="account">Public</TabsContent>
             <TabsContent value="password">Private</TabsContent>
           </Tabs>
+
           <LabelInput
             label="Title"
             placeholder="English grammar in A1 course"
@@ -43,17 +45,18 @@ export function EditCourseCardWrapper() {
             Save
           </Button>
         </div>
+
         <Statistics mockMap={stats} />
       </section>
     </>
   );
 }
 
-interface Stats {
+export interface Stats {
   mockMap: typeof stats;
 }
 
-export function Statistics({ mockMap }: Stats) {
+export function Statistics({ mockMap, }: Stats) {
   return (
     <div className="border-l border-l-2 flex flex-col gap-[16px] pl-[12px]">
       <span className="text-[rgba(45,30,99,1)] font-semibold">Statistics</span>

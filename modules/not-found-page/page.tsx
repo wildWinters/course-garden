@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import { Undo2 } from "lucide-react";
 import Link from "next/link";
 
+
 export function MainPartOfNotFoundPage() {
   return (
     <main className="min-h-screen flex flex-col mt-[-80px] items-center justify-center text-[rgba(45,30,99,1)] px-4">
@@ -64,3 +65,4 @@ export function MainPartOfNotFoundPage() {
     </main>
   );
 }
+

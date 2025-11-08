@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+
 interface AuthState {
   token: string | null;
   role: "admin" | "user" | null;

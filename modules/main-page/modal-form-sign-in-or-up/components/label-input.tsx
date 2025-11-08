@@ -1,7 +1,9 @@
 "use client";
 import { Input } from "@/shared/shad-cn/ui/input";
-import { ReactNode, SetStateAction, Dispatch } from "react";
+import { ReactNode } from "react";
 import { ChangeEvent } from "react";
+import { Label } from "@/shared/shad-cn/ui/label";
+
 
 export interface LabelInputProps {
   id?: string;
@@ -34,7 +36,7 @@ export function LabelInput({
 }: LabelInputProps) {
   return (
     <div className="flex flex-col gap-[6px]">
-      <label
+      <Label
         className={
           isLabelEsists
             ? "relative left-[5px] text-[rgba(45,30,99,1)] font-[400]"
@@ -43,7 +45,7 @@ export function LabelInput({
         htmlFor={id}
       >
         {label}
-      </label>
+      </Label>
       <div className="relative flex items-center">
         <Input
           id={id}

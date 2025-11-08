@@ -13,7 +13,7 @@ export function ControlButtonSectionWrapper({
   return (
     <section
       className={cn(
-        "flex items-center justify-between  gap-[32px] p-[16px] rounded-[8px] bg-[rgba(227,240,253,1)]",
+        "flex items-center justify-between  gap-[32px] p-[16px] rounded-[8px]",
         classname,
       )}
     >

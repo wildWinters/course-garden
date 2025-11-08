@@ -1,9 +1,7 @@
-"use client";
 import { ControlButtonSectionWrapper } from "@/modules/my-courses-admin-page/controls-button-section/contols-button-section-wrapper";
 import { AppSidebar } from "@/shared/widgets/aside-panel/aside-panel-wrapper";
 import { ListElement } from "@/shared/widgets/aside-panel/components/list-element";
 import { sidebarMenu } from "@/shared/widgets/aside-panel/mock/mock-panel";
-import { useVisualModeStore } from "@/modules/my-courses-admin-page/controls-button-section/store/use-visual-mode-store";
 import { TableModeButtonsSections } from "@/modules/my-courses-admin-page/controls-button-section/components/table-mode-buttons-section";
 import { EditCourseHeading } from "@/modules/edit-course-admin-page/headings/components/heading-edit-course";
 import { HeadingLinks } from "@/modules/edit-course-admin-page/headings/components/heading-links";
@@ -12,8 +10,6 @@ import { EditCourseCardWrapper } from "@/modules/edit-course-admin-page/edit-cou
 
 
 export default function Page() {
-  const visualModeCard = useVisualModeStore((state) => state.visualModeCard);
-
   return (
     <section className="flex gap-[20px] mx-[10vw]">
       <AppSidebar progress={1} generalCount={3}>
@@ -28,7 +24,7 @@ export default function Page() {
       </AppSidebar>
 
       <div className="flex-1">
-        <div className="flex justify-between h-[40px] mb-4">
+        <div className="flex justify-between h-[40px] mb-[10px]">
           <ControlButtonSectionWrapper isLeftHeadingExists={false}>
             <HeadingLinks mock={Links} />
           </ControlButtonSectionWrapper>
