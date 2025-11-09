@@ -8,6 +8,7 @@ import { ForgotPasswordWrapper } from "../modal-forgot-password/forgot-password-
 import { ModalEmailSendWrapper } from "../modal-email-sent/modal-email-sent-wrapeer";
 import { CreateNewPasswordWrapper } from "../modal-create-new-password/create-new-passsword-wrapper";
 
+
 export function HeadingsWrapper() {
   const { t } = useTranslation();
   return (

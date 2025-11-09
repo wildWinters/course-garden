@@ -13,15 +13,16 @@ import { stats } from "./mock/mock-stats";
 export function EditCourseCardWrapper() {
   return (
     <>
-      <section className="grid grid-cols-3 w-full  rounded-[8px] bg-[rgba(247,249,251,1)] p-[16px]">
+      <section className="flex gap-[40px] w-full rounded-[8px] bg-[rgba(247,249,251,1)] p-[16px]">
         <Image
-          className="rounded-[20px] aspect-square"
+          className="w-1/3 rounded-[20px] aspect-square max-w-[200px]"
           src="/img/card.jpg"
           width={180}
           height={180}
           alt="card-image-course"
         />
-        <div className="flex flex-col gap-[16px]">
+
+        <div className="flex flex-col  gap-[16px] w-1/3">
           <Tabs defaultValue="account" className="w-[400px]">
             <TabsList className="bg-[rgba(227,240,253,1)]">
               <TabsTrigger className="text-[rgba(160,160,181,1)] data-[state=active]:text-black" value="account">Public</TabsTrigger>
@@ -58,7 +59,7 @@ export interface Stats {
 
 export function Statistics({ mockMap, }: Stats) {
   return (
-    <div className="border-l border-l-2 flex flex-col gap-[16px] pl-[12px]">
+    <div className="w-1/3 border-l border-l-2 flex flex-col gap-[16px] pl-[12px]">
       <span className="text-[rgba(45,30,99,1)] font-semibold">Statistics</span>
 
       {mockMap.map((item, index) => (
