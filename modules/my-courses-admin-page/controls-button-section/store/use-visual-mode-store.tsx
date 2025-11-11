@@ -12,6 +12,6 @@ export const useVisualModeStore = create<IuseVisualModeStore>()(
       visualModeCard: "card",
       setVisualModeCard: (mode) => set({ visualModeCard: mode }),
     }),
-    { name: "VisualModeStore" }, 
+    { name: "VisualModeStore" },
   ),
 );

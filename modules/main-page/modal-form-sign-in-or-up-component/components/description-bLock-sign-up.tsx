@@ -2,8 +2,12 @@ import { useModalStore } from "@/shared/store/use-modal-store";
 
 export function DescriptionBLockSignUp() {
   const setIn = useModalStore((state) => state.setIn);
-  const closeSignUpShadCnModal = useModalStore( (state) => state.closeSignUpShadCnModal);
-  const openCustomModalOfSignIn = useModalStore( (state) => state.openCustomModalOfSignIn);
+  const closeSignUpShadCnModal = useModalStore(
+    (state) => state.closeSignUpShadCnModal,
+  );
+  const openCustomModalOfSignIn = useModalStore(
+    (state) => state.openCustomModalOfSignIn,
+  );
 
   return (
     <section className="flex items-center gap-[15px] text-[14px] mt-[40px]">

@@ -1,7 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { MessageWithLink } from "@/modules/main-page/modal-email-sent/components/message-with-link";
-import { ModalSendEmailTitle } from "@/modules/main-page/modal-email-sent/components/modal-sen-email-title";
+import { MessageWithLink } from "@/modules/main-page/modal-email-sent-component/components/message-with-link";
+import { ModalSendEmailTitle } from "@/modules/main-page/modal-email-sent-component/components/modal-sen-email-title";
 
 export function CustomModalOfEmailSent() {
   const { t } = useTranslation();

@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import { LabelInput } from "../main-page/modal-form-sign-in-or-up/components/label-input";
+import { LabelInput } from "../main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { Search } from "lucide-react";
 import { Undo2 } from "lucide-react";
 import Link from "next/link";
-
 
 export function MainPartOfNotFoundPage() {
   return (
@@ -31,7 +30,7 @@ export function MainPartOfNotFoundPage() {
           <br /> Try searching our site:
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto">
+        <div className="mt-[30px] flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto">
           <div className="relative w-full">
             <LabelInput
               InputClassName="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
@@ -52,17 +51,16 @@ export function MainPartOfNotFoundPage() {
           </Button>
         </div>
 
-        <div className="pt-6">
-          <Link
-            href="/my-courses-edit-user-admin-page"
-            className="inline-flex items-center text-purple-900 hover:text-purple-700 font-medium transition-colors border-b-2 border-transparent hover:border-purple-500 pb-1"
-          >
-            <Undo2 className="w-6 h-6 mr-2" />
-            <span>Go to Home</span>
-          </Link>
-        </div>
+        {/* <div className="pt-6"> */}
+        <Link
+          href="/my-courses-edit-user-admin-page"
+          className="mt-[30 px] inline-flex items-center text-purple-900 hover:text-purple-700 font-medium transition-colors border-b-2 border-transparent hover:border-purple-500 pb-1"
+        >
+          <Undo2 className="w-6 h-6 mr-2" />
+          <span>Go to Home</span>
+        </Link>
+        {/* </div> */}
       </div>
     </main>
   );
 }
-

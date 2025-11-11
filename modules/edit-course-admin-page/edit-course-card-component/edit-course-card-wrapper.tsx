@@ -5,7 +5,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/shared/shad-cn/ui/tabs";
-import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up/components/label-input";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { Textarea } from "@/shared/shad-cn/ui/textarea";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { stats } from "./mock/mock-stats";
@@ -13,9 +13,9 @@ import { stats } from "./mock/mock-stats";
 export function EditCourseCardWrapper() {
   return (
     <>
-      <section className="flex gap-[40px] w-full rounded-[8px] bg-[rgba(247,249,251,1)] p-[16px]">
+      <section className="flex gap-[40px] w-full rounded-[8px] bg-[rgba(247,249,251,1)] p-[16px] rounded-[8px]">
         <Image
-          className="w-1/3 rounded-[20px] aspect-square max-w-[200px]"
+          className="w-1/3 rounded-[20px] aspect-square max-w-[200px] max-h-[200px]"
           src="/img/card.jpg"
           width={180}
           height={180}
@@ -25,8 +25,18 @@ export function EditCourseCardWrapper() {
         <div className="flex flex-col  gap-[16px] w-1/3">
           <Tabs defaultValue="account" className="w-[400px]">
             <TabsList className="bg-[rgba(227,240,253,1)]">
-              <TabsTrigger className="text-[rgba(160,160,181,1)] data-[state=active]:text-black" value="account">Public</TabsTrigger>
-              <TabsTrigger className="text-[rgba(160,160,181,1)] data-[state=active]:text-black" value="password">Private</TabsTrigger>
+              <TabsTrigger
+                className="text-[rgba(160,160,181,1)] data-[state=active]:text-black"
+                value="account"
+              >
+                Public
+              </TabsTrigger>
+              <TabsTrigger
+                className="text-[rgba(160,160,181,1)] data-[state=active]:text-black"
+                value="password"
+              >
+                Private
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="account">Public</TabsContent>
             <TabsContent value="password">Private</TabsContent>
@@ -57,7 +67,7 @@ export interface Stats {
   mockMap: typeof stats;
 }
 
-export function Statistics({ mockMap, }: Stats) {
+export function Statistics({ mockMap }: Stats) {
   return (
     <div className="w-1/3 border-l border-l-2 flex flex-col gap-[16px] pl-[12px]">
       <span className="text-[rgba(45,30,99,1)] font-semibold">Statistics</span>
@@ -77,7 +87,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/shared/shad-cn/ui/accordion"; 
+} from "@/shared/shad-cn/ui/accordion";
 
 export function SaveCourseSection() {
   return (
@@ -88,7 +98,8 @@ export function SaveCourseSection() {
           <AccordionItem value="item-1">
             <AccordionTrigger>video</AccordionTrigger>
             <AccordionContent>
-              here must be some ui of video please fill this part if later  or now if you have a plan to fill this 
+              here must be some ui of video please fill this part if later or
+              now if you have a plan to fill this
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -97,7 +108,8 @@ export function SaveCourseSection() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Image</AccordionTrigger>
             <AccordionContent>
-              here must be some ui of video please fill this part if later  or now if you have a plan to fill this 
+              here must be some ui of video please fill this part if later or
+              now if you have a plan to fill this
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -106,7 +118,8 @@ export function SaveCourseSection() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Text</AccordionTrigger>
             <AccordionContent>
-              here must be some ui of video please fill this part if later  or now if you have a plan to fill this 
+              here must be some ui of video please fill this part if later or
+              now if you have a plan to fill this
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -115,28 +128,24 @@ export function SaveCourseSection() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Quiz</AccordionTrigger>
             <AccordionContent>
-              here must be some ui of video please fill this part if later  or now if you have a plan to fill this  
+              here must be some ui of video please fill this part if later or
+              now if you have a plan to fill this
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-
-
       </div>
     </section>
   );
 }
 
-
 export function AccordionContentWrapper() {
-
-  return  ( 
+  return (
     <>
-      <section className="flex flex-col rounded-[8px] border-[rgba(157,130,253,1)] "> 
-        <div className="flex justify-between"> 
+      <section className="flex flex-col rounded-[8px] border-[rgba(157,130,253,1)] ">
+        <div className="flex justify-between">
           {/* <Image src={} width={} height={} alt="" /> */}
-
         </div>
       </section>
     </>
-  )
+  );
 }

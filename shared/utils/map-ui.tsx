@@ -3,7 +3,7 @@ import { Fragment } from "react";
 
 interface MapUIProps<T> {
   mockDataForMap: T[];
-  children: (item: T, index?:number) => ReactNode;
+  children: (item: T, index?: number) => ReactNode;
 }
 
 export function MapUI<T>({ mockDataForMap, children }: MapUIProps<T>) {
@@ -11,7 +11,7 @@ export function MapUI<T>({ mockDataForMap, children }: MapUIProps<T>) {
   return (
     <>
       {mockDataForMap.map((value, index) => (
-        <Fragment key={index}>{children(value,index)}</Fragment>
+        <Fragment key={index}>{children(value, index)}</Fragment>
       ))}
     </>
   );

@@ -4,11 +4,11 @@ import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper"
 import { useModalStore } from "@/shared/store/use-modal-store";
 import { ReactNode } from "react";
 import { CreateNewPasswordWrapper } from "../modal-create-new-password/create-new-passsword-wrapper";
-import { ForgotPasswordHeading } from "../modal-forgot-password/components/forgot-password-heading";
-import { LabelInput } from "../modal-form-sign-in-or-up/components/label-input";
+import { ForgotPasswordHeading } from "./components/forgot-password-heading";
+import { LabelInput } from "../modal-form-sign-in-or-up-component/components/label-input";
 import { Mail } from "lucide-react";
-import { ModalEmailSendWrapper } from "../modal-email-sent/modal-email-sent-wrapeer";
-import { LoginDescription } from "../modal-forgot-password/components/login-description";
+import { ModalEmailSendWrapper } from "../modal-email-sent-component/modal-email-sent-wrapeer";
+import { LoginDescription } from "./components/login-description";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { cn } from "@/shared/lib/utils";
 
@@ -26,7 +26,7 @@ export function ForgotPasswordWrapper({
   } = useModalStore();
 
   const openCustomModalOfEmailSentContent = useModalStore(
-    (state) => state.openCustomModalOfEmailSentContent,
+    (state) => state.openCustomModalOfEmailSentContent
   );
 
   return (

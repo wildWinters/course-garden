@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { SignInOrUpContentOfDialog } from "@/modules/main-page/modal-form-sign-in-or-up/components/sign-in-content-of-dialog";
+import { SignInOrUpContentOfDialog } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/sign-in-content-of-dialog";
 import { Labels } from "@/shared/mock/labels";
 
 export interface ICustomModalOfSignInForm {}

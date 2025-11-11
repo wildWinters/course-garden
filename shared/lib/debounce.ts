@@ -1,7 +1,6 @@
-
 export function debounce<T extends (...args: any[]) => void>(
   fn: T,
-  delay: number
+  delay: number,
 ) {
   let timer: ReturnType<typeof setTimeout> | null = null;
 
@@ -21,7 +20,6 @@ export function debounce<T extends (...args: any[]) => void>(
 
   return debounced;
 }
-
 
 export type DebouncedFunction<T extends (...args: any[]) => void> = ((
   ...args: Parameters<T>

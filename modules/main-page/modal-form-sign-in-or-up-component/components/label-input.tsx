@@ -4,7 +4,6 @@ import { ReactNode } from "react";
 import { ChangeEvent } from "react";
 import { Label } from "@/shared/shad-cn/ui/label";
 
-
 export interface LabelInputProps {
   id?: string;
   label?: string;

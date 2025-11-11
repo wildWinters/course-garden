@@ -3,11 +3,10 @@ import { AppSidebar } from "@/shared/widgets/aside-panel/aside-panel-wrapper";
 import { ListElement } from "@/shared/widgets/aside-panel/components/list-element";
 import { sidebarMenu } from "@/shared/widgets/aside-panel/mock/mock-panel";
 import { TableModeButtonsSections } from "@/modules/my-courses-admin-page/controls-button-section/components/table-mode-buttons-section";
-import { EditCourseHeading } from "@/modules/edit-course-admin-page/headings/components/heading-edit-course";
-import { HeadingLinks } from "@/modules/edit-course-admin-page/headings/components/heading-links";
-import { Links } from "@/modules/edit-course-admin-page/headings/mock/mock-links";
-import { EditCourseCardWrapper } from "@/modules/edit-course-admin-page/edit-course-card/edit-course-card-wrapper";
-
+import { EditCourseHeading } from "@/modules/edit-course-admin-page/headings-component/components/heading-edit-course";
+import { HeadingLinks } from "@/modules/edit-course-admin-page/headings-component/components/heading-links";
+import { Links } from "@/modules/edit-course-admin-page/headings-component/mock/mock-links";
+import { EditCourseCardWrapper } from "@/modules/edit-course-admin-page/edit-course-card-component/edit-course-card-wrapper";
 
 export default function Page() {
   return (
@@ -33,7 +32,7 @@ export default function Page() {
         <EditCourseHeading>
           <TableModeButtonsSections />
         </EditCourseHeading>
-        <EditCourseCardWrapper/>
+        <EditCourseCardWrapper />
       </div>
     </section>
   );

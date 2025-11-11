@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Tree, TreeNodeDatum } from "react-d3-tree";
 
-
 const treeData: TreeNodeDatum = {
   name: "Root",
   attributes: { info: "root info" },
@@ -24,7 +23,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-import { TreeView, NodeModel } from "@minoru/react-d3-tree-view"; 
+import { TreeView, NodeModel } from "@minoru/react-d3-tree-view";
 import "@minoru/react-d3-tree-view/dist/react-d3-tree-view.css";
 
 export type TreeNode = {

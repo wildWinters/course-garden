@@ -7,7 +7,7 @@ import { MyCoursesCardMode } from "@/modules/my-courses-admin-page/my-courses-se
 import { AppSidebar } from "@/shared/widgets/aside-panel/aside-panel-wrapper";
 import { ListElement } from "@/shared/widgets/aside-panel/components/list-element";
 import { sidebarMenu } from "@/shared/widgets/aside-panel/mock/mock-panel";
-import { PaginationWrapper } from "@/modules/my-courses-admin-page/pagination/pagination-wrapper";
+import { PaginationWrapper } from "@/modules/my-courses-admin-page/pagination-section/pagination-wrapper";
 import { useVisualModeStore } from "@/modules/my-courses-admin-page/controls-button-section/store/use-visual-mode-store";
 import { TableModeMyCourses } from "@/modules/my-courses-admin-page/my-courses-section/components/table-mode-my-courses";
 import { cn } from "@/shared/lib/utils";

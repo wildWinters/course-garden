@@ -1,5 +1,5 @@
 "use client";
-import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up/components/label-input";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { Search, Settings, BellDot } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/shared/lib/utils";
@@ -15,7 +15,7 @@ export function HeaderUserRightPanel({ className }: { className?: string }) {
       className={cn(
         "flex items-center gap-4",
         className,
-        !isRenderComponent && "hidden",
+        !isRenderComponent && "hidden"
       )}
     >
       <LabelInput
