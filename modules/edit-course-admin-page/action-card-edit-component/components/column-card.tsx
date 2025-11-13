@@ -14,7 +14,7 @@ export function ColumnCardWrapper({
 }: IColumnCard<LeftSideCard>) {
   return (
     <>
-      <section className="flex flex-col gap-[6px]">
+      <section className="flex flex-col gap-[6px] bg-red-900">
         {mockDataColumn.map((cardItem, index) => (
           <CardWrapper
             key={index}

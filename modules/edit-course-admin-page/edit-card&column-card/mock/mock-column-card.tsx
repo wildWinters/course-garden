@@ -1,4 +1,4 @@
-import type { ReactElement } from "react"
+import type { ReactElement } from "react";
 import {
   Play,
   FileText,
@@ -7,15 +7,14 @@ import {
   Image as ImageIcon,
   HelpCircle,
   Bookmark,
-} from "lucide-react"
-
+} from "lucide-react";
 
 export interface IMockColumnCard {
-  id: string | number
-  type: string
-  title: string
-  description: string
-  icon: ReactElement
+  id: string | number;
+  type: string;
+  title: string;
+  description: string;
+  icon: ReactElement;
 }
 
 export const mockColumnCard: IMockColumnCard[] = [
@@ -47,8 +46,7 @@ export const mockColumnCard: IMockColumnCard[] = [
     description: "Add conditional logic to control the scenario flow.",
     icon: <Fan className="w-[32px] h-[32px] text-[rgba(45,30,99,1)]" />,
   },
-]
-
+];
 
 export interface IMockBlocks {
   id: number | string;

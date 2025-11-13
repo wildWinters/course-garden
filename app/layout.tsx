@@ -7,6 +7,7 @@ import { DesktopHeader } from "@/shared/widgets/header/header-wrapper";
 import { Providers } from "./providers";
 import "./globals.css";
 import "@/shared/i18n/i18n";
+import { ReactNode } from "react";
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

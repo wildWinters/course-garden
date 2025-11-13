@@ -12,4 +12,3 @@ export function IconWrapperDiv({ icon }: { icon: ReactNode }) {
     </div>
   );
 }
-
