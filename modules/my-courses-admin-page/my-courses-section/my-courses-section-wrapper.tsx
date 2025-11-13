@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { cn } from "@/shared/lib/utils";
-import { IBaseProps } from "@/shared/types/base-props";
+import type { IBaseProps } from "@/shared/types/base-props";
 
 export function MyCoursesSectionWrapper({ children, className }: IBaseProps) {
   return (

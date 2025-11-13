@@ -1,11 +1,11 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationItem,
-  PaginationPrevious,
-  PaginationLink,
   PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
   PaginationNext,
+  PaginationPrevious,
 } from "@/shared/shad-cn/ui/pagination";
 
 export function PaginationWrapper() {

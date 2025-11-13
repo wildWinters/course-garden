@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-// import { Links } from "../constant/con-links";
-import { Links } from "../mock/mock-links";
-import { cn } from "@/shared/lib/utils";
 import { usePathname } from "next/navigation";
+import { cn } from "@/shared/lib/utils";
 import { MapUI } from "@/shared/utils/map-ui";
+// import { Links } from "../constant/con-links";
+import type { Links } from "../mock/mock-links";
 
 export interface HeadingLinksProps {
   mock: typeof Links;

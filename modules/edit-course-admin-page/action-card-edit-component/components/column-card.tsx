@@ -1,7 +1,9 @@
+import {
+  type LeftSideCard,
+  mockLeftSideCards,
+} from "../mock/mock-left-side-cards";
 import { CardWrapper } from "./card-wrapper";
-import { LeftSideCard } from "../mock/mock-left-side-cards";
 import { IconDescription } from "./icon-description";
-import { mockLeftSideCards } from "../mock/mock-left-side-cards";
 
 export interface IColumnCard<MockDataColumn> {
   mockDataColumn: MockDataColumn[];

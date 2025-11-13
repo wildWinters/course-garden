@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, cloneElement } from "react";
+import { cloneElement, type ReactElement, ReactNode } from "react";
 
 export interface MapUIProps<T> {
   mockDataForMap: T[];

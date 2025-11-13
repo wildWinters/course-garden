@@ -1,6 +1,4 @@
-import { Play } from "lucide-react";
-import { Trash } from "lucide-react";
-import { Share2 } from "lucide-react";
+import { Play, Share2, Trash } from "lucide-react";
 import { Button } from "@/shared/shad-cn/ui/button";
 
 export interface IButtonsSection {

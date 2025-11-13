@@ -1,5 +1,5 @@
-import { IBaseProps } from "../types/base-props";
 import { cn } from "../lib/utils";
+import type { IBaseProps } from "../types/base-props";
 
 export function Background({ children, className }: IBaseProps) {
   return (

@@ -1,5 +1,5 @@
-import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { Checkbox } from "@radix-ui/react-checkbox";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 
 export interface ILabelBlock {
   label: string;

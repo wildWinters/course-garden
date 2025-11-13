@@ -1,5 +1,5 @@
-import { cn } from "@/shared/lib/utils";
 import Link from "next/link";
+import { cn } from "@/shared/lib/utils";
 import { useModalStore } from "@/shared/store/use-modal-store";
 
 export interface IMessageWithLink {

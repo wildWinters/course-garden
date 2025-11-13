@@ -1,7 +1,6 @@
 "use client";
-import { MouseEvent } from "react";
-import { List, Image } from "lucide-react";
-import { useState } from "react";
+import { Image, List } from "lucide-react";
+import { type MouseEvent, useState } from "react";
 import { cn } from "@/shared/lib/utils";
 import { useVisualModeStore } from "../store/use-visual-mode-store";
 

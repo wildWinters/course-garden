@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { Labels } from "@/shared/mock/labels";
 import { useModalStore } from "@/shared/store/use-modal-store";
 import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 import { SignInOrUpContentOfDialog } from "./components/sign-in-content-of-dialog";
-import { Labels } from "@/shared/mock/labels";
 
 export function ModalFormWrapper() {
   const { isCustomModalOfSignInOpen, closeCustomModalOfSignIn } =

@@ -1,22 +1,22 @@
 "use client";
+import { Eye, EyeOff } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { borderGradient } from "@/shared/constants/border-gradient";
+import { kyInstance } from "@/shared/lib/ky-instance";
+import { cn } from "@/shared/lib/utils";
 import { Labels } from "@/shared/mock/labels";
-import { GrettingsRegistration } from "./grettings-registration";
+import { useModalStore } from "@/shared/store/use-modal-store";
+import { useAuthStore } from "@/shared/store/useAuthStore";
+import type { FormData } from "../model/form-schema";
+import { getCurrentUser } from "../utils/auth";
 import { AgreeWithTermsOfUseAndPrivacyPolicy } from "./agree-with-terms-of-use-and-privacy-policy";
 import { ButtonsBLock } from "./buttons-block";
-import { EyeOff, Eye } from "lucide-react";
-import { LabelInput } from "./label-input";
-import { FormData } from "../model/form-schema";
-import { useForm, Controller } from "react-hook-form";
-import { useState } from "react";
-import { cn } from "@/shared/lib/utils";
-import { useModalStore } from "@/shared/store/use-modal-store";
-import { DescriptionBLockSignUp } from "./DescriptionBLockSignUp";
 import { DescriptionBLockSignIn } from "./DescriptionBLockSignIn";
-import { kyInstance } from "@/shared/lib/ky-instance";
-import { useRouter } from "next/navigation";
-import { getCurrentUser } from "../utils/auth";
-import { useAuthStore } from "@/shared/store/useAuthStore";
+import { DescriptionBLockSignUp } from "./DescriptionBLockSignUp";
+import { GrettingsRegistration } from "./grettings-registration";
+import { LabelInput } from "./label-input";
 
 export interface ISignInOrUpContentOfDialog {
   labels?: typeof Labels;

@@ -1,8 +1,8 @@
 "use client";
-import { Button } from "@/shared/shad-cn/ui/button";
-import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { Eye } from "lucide-react";
 import { CreateNewPasswordTitle } from "@/modules/main-page/modal-create-new-password/components/create-new-password-title";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
+import { Button } from "@/shared/shad-cn/ui/button";
 
 export function CustomModalOfOnePassword() {
   return (

@@ -1,11 +1,11 @@
 "use client";
+import Image from "next/image";
+import { ModalFormWrapper } from "@/modules/main-page/modal-form-sign-in-or-up-component/forms-wrapper";
 import { cn } from "@/shared/lib/utils";
+import { Labels } from "@/shared/mock/labels";
+import { useModalStore } from "@/shared/store/use-modal-store";
 import HEADER_LINKS from "@/shared/widgets/header/const/header-links";
 import { Last_LIST_ELEMENT_BUTTON } from "@/shared/widgets/header/const/tw-list-button";
-import { Labels } from "@/shared/mock/labels";
-import { ModalFormWrapper } from "@/modules/main-page/modal-form-sign-in-or-up-component/forms-wrapper";
-import Image from "next/image";
-import { useModalStore } from "@/shared/store/use-modal-store";
 
 export interface LinksListProps {
   links?: string[];
@@ -41,7 +41,7 @@ export function LinksList({
           <li
             key={link}
             className={cn(
-              "text-[14px] font-medium cursor-pointer hover:opacity-80 transition-opacity list-none"
+              "text-[14px] font-medium cursor-pointer hover:opacity-80 transition-opacity list-none",
             )}
           >
             {linkText}

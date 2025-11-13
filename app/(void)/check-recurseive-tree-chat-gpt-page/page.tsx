@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Tree, TreeNodeDatum } from "react-d3-tree";
+import { Tree, type TreeNodeDatum } from "react-d3-tree";
 
 const treeData: TreeNodeDatum = {
   name: "Root",
@@ -15,15 +15,14 @@ const treeData: TreeNodeDatum = {
   ],
 };
 
+import { type NodeModel, TreeView } from "@minoru/react-d3-tree-view";
 // Accordion shadcn + рекурсивний рендер
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "@/components/ui/accordion";
-
-import { TreeView, NodeModel } from "@minoru/react-d3-tree-view";
 import "@minoru/react-d3-tree-view/dist/react-d3-tree-view.css";
 
 export type TreeNode = {

@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { Button } from "@/shared/shad-cn/ui/button";
 import { Plus } from "lucide-react";
+import type { ReactNode } from "react";
+import { Button } from "@/shared/shad-cn/ui/button";
 import { DescriptionProgress } from "./components/description-progress";
 
 export interface IAppSideeBar {

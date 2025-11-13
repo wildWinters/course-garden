@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import {
-  Star,
-  Video,
-  ImageIcon,
-  FileText,
-  Shuffle,
-  ListChecks,
-  Tags,
   Code2,
+  FileText,
+  ImageIcon,
+  ListChecks,
+  Shuffle,
+  Star,
+  Tags,
+  Video,
 } from "lucide-react";
+import { useState } from "react";
 
 export default function EditCoursePage() {
   const [title, setTitle] = useState("English grammar A1");

@@ -1,9 +1,9 @@
 "use client";
-import { createPortal } from "react-dom";
-import { ReactNode, useEffect, useState } from "react";
 import { XIcon } from "lucide-react";
-import { Button } from "@/shared/shad-cn/ui/button";
+import { type ReactNode, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { cn } from "@/shared/lib/utils";
+import { Button } from "@/shared/shad-cn/ui/button";
 
 export interface ICustomModal {
   id: string;

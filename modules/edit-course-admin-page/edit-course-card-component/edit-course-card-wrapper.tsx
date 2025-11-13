@@ -1,13 +1,13 @@
 import Image from "next/image";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
+import { Button } from "@/shared/shad-cn/ui/button";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/shared/shad-cn/ui/tabs";
-import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { Textarea } from "@/shared/shad-cn/ui/textarea";
-import { Button } from "@/shared/shad-cn/ui/button";
 import { stats } from "./mock/mock-stats";
 
 export function EditCourseCardWrapper() {

@@ -1,10 +1,9 @@
 "use client";
+import { Search, Undo2 } from "lucide-react";
 import Image from "next/image";
-import { LabelInput } from "../main-page/modal-form-sign-in-or-up-component/components/label-input";
-import { Button } from "@/shared/shad-cn/ui/button";
-import { Search } from "lucide-react";
-import { Undo2 } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/shared/shad-cn/ui/button";
+import { LabelInput } from "../main-page/modal-form-sign-in-or-up-component/components/label-input";
 
 export function MainPartOfNotFoundPage() {
   return (

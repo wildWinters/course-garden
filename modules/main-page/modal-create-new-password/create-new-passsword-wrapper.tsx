@@ -1,7 +1,7 @@
 "use client";
-import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
-import { CustomModalOfOnePassword } from "@/shared/widgets/custom-modal/components/custom-modal-of-new-password-content";
 import { useModalStore } from "@/shared/store/use-modal-store";
+import { CustomModalOfOnePassword } from "@/shared/widgets/custom-modal/components/custom-modal-of-new-password-content";
+import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 
 export function CreateNewPasswordWrapper() {
   const {

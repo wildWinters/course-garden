@@ -1,8 +1,8 @@
-import { Button } from "@/shared/shad-cn/ui/button";
-import { IBaseProps } from "@/shared/types/base-props";
 import { cn } from "@/shared/lib/utils";
-import { descriptionSpan } from "../constant/con-span";
+import { Button } from "@/shared/shad-cn/ui/button";
+import type { IBaseProps } from "@/shared/types/base-props";
 import { MapUI } from "@/shared/utils/map-ui";
+import { descriptionSpan } from "../constant/con-span";
 import { getColor } from "../constant/get-colors";
 
 export function EditCourseHeading({ children, className }: IBaseProps) {

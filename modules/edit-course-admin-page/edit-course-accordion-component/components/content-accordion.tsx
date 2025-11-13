@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import { Textarea } from "@/shared/shad-cn/ui/textarea";
-import { mockTextEditorIcons } from "../mock/mock-text-editor-icons";
-import { ReactNode } from "react";
+import type { mockTextEditorIcons } from "../mock/mock-text-editor-icons";
 
 export interface IContentAccordion {
   description: string;
@@ -8,7 +8,10 @@ export interface IContentAccordion {
   mockTextEditorIcons: typeof mockTextEditorIcons;
 }
 
-export function ContentAccordion({ placeholder, mockTextEditorIcons }: IContentAccordion) {
+export function ContentAccordion({
+  placeholder,
+  mockTextEditorIcons,
+}: IContentAccordion) {
   return (
     <div className="flex flex-col gap-[4px]">
       <div className="flex gap-[2px]">
@@ -23,10 +26,7 @@ export function ContentAccordion({ placeholder, mockTextEditorIcons }: IContentA
   );
 }
 
-
-export interface IIconWrapperDiv {
-
-}
+export type IIconWrapperDiv = {};
 
 export function IconWrapperDiv({ icon }: { icon: ReactNode }) {
   return (

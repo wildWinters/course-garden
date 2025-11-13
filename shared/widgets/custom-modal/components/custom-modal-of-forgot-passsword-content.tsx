@@ -1,12 +1,12 @@
 "use client";
-import { Button } from "@/shared/shad-cn/ui/button";
-import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
-import { LoginDescription } from "@/modules/main-page/modal-forgot-password-compenent/components/login-description";
-import { ForgotPasswordHeading } from "@/modules/main-page/modal-forgot-password-compenent/components/forgot-password-heading";
 import { Mail } from "lucide-react";
-import { ModalEmailSendWrapper } from "@/modules/main-page/modal-email-sent-component/modal-email-sent-wrapeer";
 import { useTranslation } from "react-i18next";
+import { ModalEmailSendWrapper } from "@/modules/main-page/modal-email-sent-component/modal-email-sent-wrapeer";
+import { ForgotPasswordHeading } from "@/modules/main-page/modal-forgot-password-compenent/components/forgot-password-heading";
+import { LoginDescription } from "@/modules/main-page/modal-forgot-password-compenent/components/login-description";
+import { LabelInput } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/label-input";
 import { cn } from "@/shared/lib/utils";
+import { Button } from "@/shared/shad-cn/ui/button";
 
 export function CustomModalOfForgotPassword() {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 "use client";
-import { IBaseProps } from "@/shared/types/base-props";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+import type { IBaseProps } from "@/shared/types/base-props";
 
 interface IHeadings extends IBaseProps {
   LettesImages?: ReactNode;

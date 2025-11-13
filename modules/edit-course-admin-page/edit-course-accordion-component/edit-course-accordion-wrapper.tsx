@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -5,8 +6,6 @@ import {
   AccordionTrigger,
 } from "@/shared/shad-cn/ui/accordion";
 import { Button } from "@/shared/shad-cn/ui/button";
-import { ReactNode } from "react";
-
 
 export interface IEditCourseAccordionWrapper {
   children: ReactNode;

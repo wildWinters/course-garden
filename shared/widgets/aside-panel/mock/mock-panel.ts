@@ -1,14 +1,14 @@
 // mock/sidebarMenu.ts
 import {
-  LayoutGrid,
-  Table,
   BarChart3,
-  LayoutTemplate,
-  Smile,
-  Upload,
   CircleHelp,
+  LayoutGrid,
+  LayoutTemplate,
+  type LucideIcon,
+  Smile,
+  Table,
+  Upload,
 } from "lucide-react";
-import { type LucideIcon } from "lucide-react";
 
 export interface SidebarItem {
   id: number;

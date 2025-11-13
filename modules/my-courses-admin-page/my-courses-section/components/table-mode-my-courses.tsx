@@ -1,4 +1,8 @@
 "use client";
+import { ArrowUpDown } from "lucide-react";
+import { useState } from "react";
+import { cn } from "@/shared/lib/utils";
+import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -8,12 +12,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/shared/shad-cn/ui/table";
-import { mockTableHead } from "../mock/mock-table-head";
-import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
 import { mockTableData } from "../mock/mock-table-data";
-import { ArrowUpDown } from "lucide-react";
-import { cn } from "@/shared/lib/utils";
-import { useState } from "react";
+import { mockTableHead } from "../mock/mock-table-head";
 
 export interface ITableModeMyCourses {
   mockTableDataProps?: typeof mockTableData;

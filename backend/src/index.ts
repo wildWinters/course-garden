@@ -1,8 +1,8 @@
 import { serve } from "@hono/node-server";
-import { Hono } from "hono";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import fs from "fs/promises";
+import { Hono } from "hono";
+import jwt from "jsonwebtoken";
 import { authMiddleware } from "./middlewares/auth.js";
 
 const app = new Hono();

@@ -1,8 +1,8 @@
 "use client";
-import { Button } from "@/shared/shad-cn/ui/button";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { borderGradient } from "@/shared/constants/border-gradient";
+import { Button } from "@/shared/shad-cn/ui/button";
 
 interface IButtonsBLock {
   inOrUp?: "in" | "up" | null;

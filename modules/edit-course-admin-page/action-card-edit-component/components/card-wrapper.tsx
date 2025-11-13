@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import { cn } from "@/shared/lib/utils";
-import { IBaseProps } from "@/shared/types/base-props";
-import { ReactNode } from "react";
+import type { IBaseProps } from "@/shared/types/base-props";
 
 export interface ICardWrapper extends IBaseProps {
   sideIcon: ReactNode;

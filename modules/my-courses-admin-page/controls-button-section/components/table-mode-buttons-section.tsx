@@ -1,8 +1,6 @@
-import { Share2 } from "lucide-react";
-import { Pause } from "lucide-react";
-import { Trash } from "lucide-react";
-import { IBaseProps } from "@/shared/types/base-props";
+import { Pause, Share2, Trash } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
+import type { IBaseProps } from "@/shared/types/base-props";
 
 export function TableModeButtonsSections({ children, className }: IBaseProps) {
   return (

@@ -1,7 +1,6 @@
 "use client";
+import type { ChangeEvent, ReactNode } from "react";
 import { Input } from "@/shared/shad-cn/ui/input";
-import { ReactNode } from "react";
-import { ChangeEvent } from "react";
 import { Label } from "@/shared/shad-cn/ui/label";
 
 export interface LabelInputProps {

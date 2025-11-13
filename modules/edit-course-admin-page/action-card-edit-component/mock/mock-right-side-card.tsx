@@ -1,4 +1,4 @@
-import { Image, FileImage, HelpCircle, Bookmark } from "lucide-react";
+import { Bookmark, FileImage, HelpCircle, Image } from "lucide-react";
 
 export interface LeftSideCard {
   description: string;

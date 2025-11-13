@@ -1,4 +1,4 @@
-export interface ICreateNewPasswordTitle {}
+export type ICreateNewPasswordTitle = {};
 
 export function CreateNewPasswordTitle({}: ICreateNewPasswordTitle) {
   return (

@@ -1,5 +1,5 @@
-import { Play, FileText, RotateCcw, Fan } from "lucide-react";
-import { ElementType } from "react";
+import { Fan, FileText, Play, RotateCcw } from "lucide-react";
+import type { ElementType } from "react";
 
 export interface LeftSideCard {
   description: string;

@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { DesktopHeader } from "@/shared/widgets/header/header-wrapper";
+import { Cabin, Geist, Geist_Mono } from "next/font/google";
 import { HeaderLogo } from "@/shared/widgets/header/components/header-logo";
-import { Cabin } from "next/font/google";
-import { MobileHeader } from "@/shared/widgets/header/components/mobile-header";
-import { Providers } from "./providers";
 import { HeaderUserRightPanel } from "@/shared/widgets/header/components/header-user-right-panel";
+import { MobileHeader } from "@/shared/widgets/header/components/mobile-header";
+import { DesktopHeader } from "@/shared/widgets/header/header-wrapper";
+import { Providers } from "./providers";
 import "./globals.css";
 import "@/shared/i18n/i18n";
-import { HeaderLinks } from "@/shared/widgets/header/components/header-links";
 
 const cabin = Cabin({
   variable: "--font-cabin",

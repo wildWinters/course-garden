@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { cva } from "class-variance-authority";
+import type { ReactNode } from "react";
 
 const headerDesktopVersion = cva(
   "hidden lg:flex items-center justify-between bg-white mt-[24px] px-[10vw] mb-[13px]",

@@ -1,11 +1,11 @@
+import type { ReactNode } from "react";
+import { cn } from "@/shared/lib/utils";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/shared/shad-cn/ui/tabs";
-import { ReactNode } from "react";
-import { cn } from "@/shared/lib/utils";
 
 export interface ITabsWarapperProps<TC, TT> {
   children?: ReactNode;

@@ -1,9 +1,9 @@
+import { cn } from "@/shared/lib/utils";
 import { Button } from "@/shared/shad-cn/ui/button";
 import { Card, CardContent, CardFooter } from "@/shared/shad-cn/ui/card";
 import { mockCourses } from "../mock/mock-courses";
 import { CardInfo } from "./card-mode-info";
 import { ButtonsSection } from "./cards-mode-buttons-section";
-import { cn } from "@/shared/lib/utils";
 
 export interface MyCourseCardMode {
   className?: string;

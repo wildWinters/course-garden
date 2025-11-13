@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { IBaseProps } from "@/shared/types/base-props";
 import { cn } from "@/shared/lib/utils";
+import type { IBaseProps } from "@/shared/types/base-props";
 
 export function SortBy({ className }: IBaseProps) {
   return (

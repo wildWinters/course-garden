@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import {
   Dialog,
-  DialogTrigger,
   DialogContent,
+  DialogTrigger,
 } from "@/shared/shad-cn/ui/dialog";
 
 type HeaderDialogProps = {

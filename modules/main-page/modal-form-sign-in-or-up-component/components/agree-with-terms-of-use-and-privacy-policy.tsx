@@ -1,12 +1,12 @@
 "use client";
-import { cn } from "@/shared/lib/utils";
-import { borderGradient } from "@/shared/constants/border-gradient";
+import type { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
+import { borderGradient } from "@/shared/constants/border-gradient";
+import { cn } from "@/shared/lib/utils";
 import { Checkbox } from "@/shared/shad-cn/ui/checkbox";
-import { Dispatch, SetStateAction } from "react";
 import { useModalStore } from "@/shared/store/use-modal-store";
-import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 import { CustomModalOfForgotPassword } from "@/shared/widgets/custom-modal/components/custom-modal-of-forgot-passsword-content";
+import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 
 export interface IAgreeWithTermsOfUseAndPrivacyPolicy {
   inOrUp?: "in" | "up" | null;

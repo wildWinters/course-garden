@@ -1,7 +1,7 @@
 "use client";
-import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 import { useModalStore } from "@/shared/store/use-modal-store";
 import { CustomModalOfEmailSent } from "@/shared/widgets/custom-modal/components/custom-modal-of-email-sent-content";
+import { CustomModal } from "@/shared/widgets/custom-modal/custom-modal-wrapper";
 
 export function ModalEmailSendWrapper() {
   const {

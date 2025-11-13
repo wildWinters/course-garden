@@ -1,12 +1,12 @@
 "use client";
-import { Background } from "@/shared/ui/background";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/shared/shad-cn/ui/button";
+import { Background } from "@/shared/ui/background";
+import { CreateNewPasswordWrapper } from "../modal-create-new-password/create-new-passsword-wrapper";
+import { ModalEmailSendWrapper } from "../modal-email-sent-component/modal-email-sent-wrapeer";
+import { ForgotPasswordWrapper } from "../modal-forgot-password-compenent/forgot-password-wrapper";
 import { Headings } from "./components/headings";
 import { PictureSection } from "./components/picture-section";
-import { useTranslation } from "react-i18next";
-import { ForgotPasswordWrapper } from "../modal-forgot-password-compenent/forgot-password-wrapper";
-import { ModalEmailSendWrapper } from "../modal-email-sent-component/modal-email-sent-wrapeer";
-import { CreateNewPasswordWrapper } from "../modal-create-new-password/create-new-passsword-wrapper";
 
 export function HeadingsWrapper() {
   const { t } = useTranslation();

@@ -1,5 +1,4 @@
-import { ReactNode } from "react";
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 
 interface MapUIProps<T> {
   mockDataForMap: T[];

@@ -1,26 +1,26 @@
 "use client";
-import { useTranslation } from "react-i18next";
-import Image from "next/image";
-import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
-import { Button } from "@/shared/shad-cn/ui/button";
 import { Menu } from "lucide-react";
+import Image from "next/image";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { SignInOrUpContentOfDialog } from "@/modules/main-page/modal-form-sign-in-or-up-component/components/sign-in-content-of-dialog";
 import { Labels } from "@/shared/mock/labels";
+import { Button } from "@/shared/shad-cn/ui/button";
 import { useModalStore } from "@/shared/store/use-modal-store";
-import { useEffect } from "react";
+import { DialogWrapper } from "@/shared/ui/dialog-wrapper";
 
 export function MobileHeader() {
   const { t } = useTranslation();
   const navigation = t("app.navigation", { returnObjects: true }) || [];
   const safeNavigation = Array.isArray(navigation) ? navigation : [];
   const isSignUpShadCnModalOpen = useModalStore(
-    (state) => state.isSignUpShadCnModalOpen
+    (state) => state.isSignUpShadCnModalOpen,
   );
   const openSignUpShadCnModal = useModalStore(
-    (state) => state.openSignUpShadCnModal
+    (state) => state.openSignUpShadCnModal,
   );
   const closeSignUpShadCnModal = useModalStore(
-    (state) => state.closeSignUpShadCnModal
+    (state) => state.closeSignUpShadCnModal,
   );
   // const inOrUp =  useModalStore(state => state. )
 

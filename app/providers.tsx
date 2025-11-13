@@ -1,6 +1,6 @@
 "use client";
 import "@/shared/i18n/i18n";
-import { ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { I18nextProvider } from "react-i18next";
 import i18n from "@/shared/i18n/i18n";
 

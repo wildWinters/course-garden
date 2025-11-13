@@ -1,14 +1,19 @@
-import { ReactNode, Dispatch, SetStateAction, forwardRef } from "react";
-import { cn } from "@/shared/lib/utils";
+import {
+  type Dispatch,
+  forwardRef,
+  type ReactNode,
+  type RefObject,
+  type SetStateAction,
+} from "react";
 import { borderGradient } from "@/shared/constants/border-gradient";
+import { cn } from "@/shared/lib/utils";
 import {
   Dialog,
-  DialogTrigger,
+  DialogClose,
   DialogContent,
   DialogTitle,
-  DialogClose,
+  DialogTrigger,
 } from "@/shared/shad-cn/ui/dialog";
-import { RefObject } from "react";
 
 export interface DialogWrapperProps {
   Trigger: ReactNode | null;

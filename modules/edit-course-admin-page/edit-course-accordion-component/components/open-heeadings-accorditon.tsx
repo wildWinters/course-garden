@@ -1,14 +1,11 @@
+import { ChevronUp, Trash } from "lucide-react";
 import { cn } from "@/shared/lib/utils";
-import { ChevronUp } from "lucide-react";
-import { Trash } from "lucide-react";
 
 export interface IDescriptionAccordion {
   description: string;
 }
 
-export function OpenHeadingAccordion({
-  description,
-}: IDescriptionAccordion) {
+export function OpenHeadingAccordion({ description }: IDescriptionAccordion) {
   return (
     <div className={cn("flex justify-between items-center gap-[16px]")}>
       <img
